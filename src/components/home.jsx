@@ -1,26 +1,24 @@
 import React from "react";
-import Product from "./product";
 import styled from "styled-components";
 import { BrowserRouter as Router, Link, Route } from "react-router-dom";
-import Distillate from "./distillate";
-import FullSpectrum from "./fullSpectrum";
 import Nav from "./nav";
 
 //Images
-import HeroImg from "../assets/hero-bg-image.png";
-import LogoHomePage from "../assets/logo-homepage.png";
-import fullSpectrumImg from "../assets/fullSpectrum.png";
-import distillateImg from "../assets/distillate.png";
-import bigImg from "../assets/highlightsBig.png";
-import img1 from "../assets/img1.png";
-import img2 from "../assets/img2.png";
-import img3 from "../assets/img3.png";
-import img4 from "../assets/img4.png";
+import HeroImg from "../assets/hero-bg-image-1.png";
+import LogoHomePage from "../assets/logo192.png";
+import fullSpectrumImg from "../assets/fullSpectrum-1.png";
+import distillateImg from "../assets/distillate-1.png";
+import bigImg from "../assets/highlightsBig-1.png";
+import img1 from "../assets/img1-1.png";
+import img2 from "../assets/img2-1.png";
+import img3 from "../assets/img3-1.png";
+import img4 from "../assets/img4-1.png";
 import { Footer } from "./footer";
 
 const Main = styled.div`
   background-color: #120033;
 `;
+
 const Hero = styled.div`
   padding: 0px 5%;
   display: flex;
@@ -34,27 +32,49 @@ const Hero = styled.div`
 
   .text-container {
     width: 50%;
+    margin-top: 20px;
     h1 {
       color: white;
     }
     h1:nth-child(1) {
       font-weight: 400;
+      font-size: 50px;
     }
 
     h1:nth-child(2) {
       color: #d5931c;
-      font-size: 3.2rem;
+      font-size: 70px;
+      margin-top: -20px;
+    }
+
+    .line {
+      width: 125px;
+      height: 3px;
+      background-color: #d5931c;
+      content: "";
+      margin-bottom: 20px;
     }
 
     p {
       color: white;
       opacity: 0.7;
       font-weight: 300;
+      font-size: 20px;
+    }
+
+    button {
+      margin-top: 60px;
+      padding: 10px 45px;
+      border: none;
+      background-color: #d5931c;
+      color: white;
+      font-size: 20px;
+      cursor: pointer;
     }
   }
 
   .hero-image {
-    width: 50%;
+    width: 43%;
     img {
       width: 100%;
     }
@@ -67,7 +87,7 @@ const Products = styled.div`
   background-color: #120033;
   padding: 100px;
   /* padding-bottom: 0px; */
-  min-height: 120vh;
+  min-height: 105vh;
 
   h1 {
     color: #d5931c;
@@ -124,12 +144,18 @@ const Button = styled.button`
     props.button === "distillate" ? "2px solid#d4921e" : "2px solid #6c22e1"};
   box-shadow: 0px 3px 10px #1f1f1f;
   outline: none;
+  transition: all 0.1s ease;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.02);
+  }
 `;
 
 const Highlights = styled.div`
   /* height: 100vh; */
   background-color: #0f0028;
   padding-bottom: 50px;
+
   .text {
     width: 50%;
     padding: 50px;
@@ -168,19 +194,21 @@ let Home = () => {
         <div className="text-container">
           <h1>Welcome to</h1>
           <h1>Wizard Craft</h1>
+          <div className="line"></div>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
-            mattis non magna id scelerisque. Nullam urna justo, facilisis
-            aliquam leo non, pellentesque malesuada est. Nam sollicitudin
-            vehicula massa, ac sodales augue volutpat ut.{" "}
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
+            ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas
+            accumsan lacus vel facilisis.{" "}
           </p>
+          <button>Show More</button>
         </div>
         <div className="hero-image">
           <img src={LogoHomePage} alt="" />
         </div>
       </Hero>
 
-      <Products id="products">
+      <Products id="Products">
         <h1>Products</h1>
         <p>Find out the details of our prouducts below.</p>
 
@@ -200,7 +228,7 @@ let Home = () => {
         </div>
       </Products>
 
-      <Highlights>
+      <Highlights id="Highlights">
         <div className="text">
           <h1>Highlights</h1>
           <p>
@@ -229,6 +257,7 @@ let Home = () => {
           </div>
         </div>
       </Highlights>
+
       <Footer />
     </Main>
   );

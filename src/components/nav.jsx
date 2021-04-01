@@ -12,6 +12,7 @@ const Navigation = styled.nav`
   position: fixed;
   width: 100vw;
   z-index: 1000;
+
   .nav-details {
     display: flex;
     align-items: center;
@@ -22,15 +23,20 @@ const Navigation = styled.nav`
     .nav-socmed-logo {
       display: flex;
       align-items: center;
+      background-color: red;
       a {
-        margin: 0px 10px;
-
+        margin: 0px 20px;
+        position: relative;
         img {
           width: 20px;
           height: 20px;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
         }
       }
     }
+
     .nav-phone {
       p {
         font-weight: 500;
@@ -42,22 +48,28 @@ const Navigation = styled.nav`
   .primary-nav {
     display: flex;
     align-items: center;
-    padding: 15px 5%;
+    padding: 30px 5%;
     justify-content: space-between;
     transition: all 0.3s ease-in-out;
     background-color: ${(props) =>
       props.position === "top" ? "transparent" : "#2a0c5d"};
 
     .nav-logo {
+      background-color: green;
+      width: 150px;
+      position: relative;
       img {
-        height: 40px;
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
       }
     }
     .nav-links {
       ul {
         li {
           display: inline-block;
-          margin: 0px 10px;
+          margin-left: 37px;
           font-weight: 700;
           a {
             text-decoration: none;
@@ -81,8 +93,6 @@ let Nav = () => {
         setPos("top");
       }
     });
-
-    console.log(pos);
   }, [pos]);
 
   return (
@@ -126,10 +136,13 @@ let Nav = () => {
               </Link>
             </li>
             <li>
-              <a href="#products">Products</a>
+              {/* <Link to="/#products">
+                <p>Products</p>
+              </Link> */}
+              <a href="/#Products">Products</a>
             </li>
             <li>
-              <a href="#ad">Highlights</a>
+              <a href="#Highlights">Highlights</a>
             </li>
             <li>
               <a href="#ad">FAQ</a>

@@ -30,6 +30,7 @@ let Distillate = (props) => {
     <Div>
       <Nav />
       <h1 className="distillate-title">Distillate</h1>
+
       <div className="product-container">
         {props.products.map((product) => (
           <Product products={product} link="Distillate" />

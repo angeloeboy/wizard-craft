@@ -5,11 +5,10 @@ import strawberry from "../assets/product-logo/strawberry.png";
 const Div = styled.div`
   box-sizing: border-box;
   display: inline-block;
-  width: 48%;
-  /* min-width: 100px; */
+  width: 49%;
   border: 1px solid #594d6c;
   padding: 20px;
-  margin: 10px;
+  margin: 6px 0px;
 
   a {
     text-decoration: none;
@@ -30,7 +29,6 @@ const Div = styled.div`
     }
     .texts {
       margin-left: 20px;
-      /* background-color: pink; */
       width: 60%;
       .product-name {
         text-transform: uppercase;
@@ -49,7 +47,6 @@ const Div = styled.div`
         width: 60%;
         border: none;
         padding: 5px 10px;
-        /* font-size: rem; */
       }
     }
   }
