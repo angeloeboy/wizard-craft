@@ -12,3 +12,8 @@
   align-items: center;
   justify-content: space-around;
 }
+
+html,
+body {
+  scroll-behavior: smooth;
+}

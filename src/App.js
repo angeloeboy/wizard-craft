@@ -11,6 +11,24 @@ function App() {
   let fullSpectrumProducts = [
     {
       name: "Strawberry Lemonade",
+      description: "Sativa",
+      feelings: [
+        "Relaxed",
+        "Happy",
+        "Euphoric",
+      ],
+      details: "Original Glue (GG4), developed by GG Strains, is a potent hybrid strain that delivers heavy-handed euphoria and relaxation, leaving you feeling “glued” to the couch. Its chunky, resin-covered buds fill the room with pungent earthy and sour aromas inherited from its parent strains, Chem’s Sister, Sour Dubb, and Chocolate Diesel. Taking first place in both the Michigan and Los Angeles 2014 Cannabis Cups as well as the High Times Jamaican World Cup, this multiple award-winning hybrid's supremacy is no longer a secret, and consumers will search far and wide to get their hands sticky with Original Glue (GG4)."
+    },
+    {
+      name: "Strawberry Lemonade",
+      description: "Sativa"
+    },
+    {
+      name: "Strawberry Lemonade",
+      description: "Sativa"
+    },
+    {
+      name: "Strawberry Lemonade",
       description: "Sativa"
     },
     {
@@ -30,7 +48,13 @@ function App() {
   let distillateProducts = [
     {
       name: "Strawberry Lemonade",
-      description: "Sativa"
+      description: "Sativa",
+      feelings: [
+        "Relaxed",
+        "Happy",
+        "Euphoric",
+      ],
+      details: "Original Glue (GG4), developed by GG Strains, is a potent hybrid strain that delivers heavy-handed euphoria and relaxation, leaving you feeling “glued” to the couch. Its chunky, resin-covered buds fill the room with pungent earthy and sour aromas inherited from its parent strains, Chem’s Sister, Sour Dubb, and Chocolate Diesel. Taking first place in both the Michigan and Los Angeles 2014 Cannabis Cups as well as the High Times Jamaican World Cup, this multiple award-winning hybrid's supremacy is no longer a secret, and consumers will search far and wide to get their hands sticky with Original Glue (GG4)."
     },
     {
       name: "Strawberry Lemonade",
@@ -56,13 +80,8 @@ function App() {
           <Route path="/Full-Spectrum" exact render={(props) => <FullSpectrum products={fullSpectrumProducts}/> }/>
             
 
-          {/* Create dynamic routes */}
-          {/* {products.map(product => (
-            <Route path={`/${product.name}`} exact render={(props) => <ProductDetails {...props} products={product} />}/>
-          ))} */}
+          {/* Rendering all Distillate Products */}
 
-
-  
           {distillateProducts.map(product => (
             <Route
             path={`/Distillate/${product.name}`}
@@ -70,7 +89,8 @@ function App() {
           />
           ))}
 
-          
+          {/* Rendering all Full Spectrum Products */}
+
           {fullSpectrumProducts.map(product => (
             <Route
             path={`/Full-Spectrum/${product.name}`}

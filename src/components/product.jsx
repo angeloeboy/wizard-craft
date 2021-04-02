@@ -9,12 +9,16 @@ const Div = styled.div`
   border: 1px solid #594d6c;
   padding: 20px;
   margin: 6px 0px;
-
+  transition: all 0.3s ease;
   a {
     text-decoration: none;
   }
   p {
     color: white;
+  }
+
+  &:hover {
+    background-color: #0d0024;
   }
 
   .inner-product {

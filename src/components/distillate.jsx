@@ -25,6 +25,7 @@ const Div = styled.div`
     border: none;
   }
 `;
+
 let Distillate = (props) => {
   return (
     <Div>

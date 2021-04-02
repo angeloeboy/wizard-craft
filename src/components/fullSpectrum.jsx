@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Product from "./product";
 import Nav from "./nav";
 import styled from "styled-components";
@@ -27,16 +27,34 @@ const Div = styled.div`
 `;
 
 let FullSpectrum = (props) => {
+  let [noOfProduct, setNoOfProduct] = useState(5);
+
+  let product = [];
+
+  for (let i = 0; i < noOfProduct; i++) {
+    let item = props.products[i];
+    product.push(<Product products={item} link="Full-Spectrum" />);
+  }
+
   return (
     <Div>
       <Nav />
       <h1 className="fullSpectrum-title">Full Spectrum</h1>
       <div className="product-container">
-        {props.products.map((product) => (
+        {/* {props.products.map((product) => (
           <Product products={product} link="Full-Spectrum" />
-        ))}
+        ))} */}
+
+        {product}
       </div>
-      <button className="showMore">Show More (10)</button>
+      <button
+        className="showMore"
+        onClick={() =>
+          setNoOfProduct(noOfProduct + (props.products.length - noOfProduct))
+        }
+      >
+        Show More ({props.products.length - noOfProduct})
+      </button>
       <Footer />
     </Div>
   );
