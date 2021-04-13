@@ -2,14 +2,19 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import strawberry from "../assets/product-logo/strawberry.png";
+import { motion } from "framer-motion";
+
+import IMAGES from "../assets/product-icons/index";
+
 const Div = styled.div`
   box-sizing: border-box;
   display: inline-block;
   width: 49%;
-  border: 1px solid #594d6c;
-  padding: 20px;
   margin: 6px 0px;
   transition: all 0.3s ease;
+  background-color: #26095c;
+  position: relative;
+
   a {
     text-decoration: none;
   }
@@ -17,60 +22,124 @@ const Div = styled.div`
     color: white;
   }
 
-  &:hover {
+  /* &:hover {
     background-color: #0d0024;
-  }
+  } */
 
   .inner-product {
     display: flex;
     align-items: center;
+    justify-content: space-between;
 
     .img-container {
-      width: 40%;
+      width: 35%;
+      height: auto;
+      padding: 20px;
+
       img {
         width: 100%;
       }
     }
     .texts {
       margin-left: 20px;
+      width: 65%;
+      background-color: #2b0a69;
       width: 60%;
+      padding: 20px;
+      padding-right: 0px;
+      position: relative;
+
       .product-name {
         text-transform: uppercase;
         font-weight: 700;
+        font-size: 1rem;
+        padding-right: 100px;
       }
 
       .product-desc {
         margin-top: 10px;
+        font-weight: 400;
       }
 
       button {
         text-transform: uppercase;
-        font-weight: 600;
-        background-color: #d5931c;
-        margin-top: 20px;
-        width: 60%;
+        /* background-color: #651ed6; */
+        background: rgb(74, 16, 166);
+        background: linear-gradient(
+          0deg,
+          rgba(74, 16, 166, 1) 0%,
+          rgba(108, 34, 224, 1) 64%
+        );
+        width: 80px;
         border: none;
+        height: 100%;
         padding: 5px 10px;
+        position: absolute;
+        top: 0px;
+        right: 0;
+        font-weight: 600;
+        font-size: 0.7rem;
+      }
+
+      .line {
+        content: "";
+        width: 1px;
+        height: 80%;
+        background-color: #462e74;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .icons {
+        display: flex;
+        img {
+          width: 20px;
+          margin: 10px;
+          &:nth-child(1) {
+            margin-left: 0px;
+          }
+        }
       }
     }
+  }
+
+  @media (max-width: 1110px) {
+    width: 80%;
+  }
+
+  @media (max-width: 900px) {
+    width: 100%;
   }
 `;
 
 let Product = (props) => {
   return (
     <Div>
-      <Link to={`/${props.link}/${props.products.name}`}>
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
         <div className="inner-product">
           <div className="img-container">
-            <img src={strawberry} alt="" />
+            <img src={props.products.ProductLogo} alt="" />
           </div>
+
           <div className="texts">
+            <div className="line"></div>
             <p className="product-name">{props.products.name}</p>
             <p className="product-desc">{props.products.description}</p>
-            <button>View more details</button>
+
+            <div className="icons">
+              <img src={props.products.ImgLink1} alt="" />
+              <img src={props.products.ImgLink2} alt="" />
+              <img src={props.products.ImgLink3} alt="" />
+            </div>
+
+            <Link to={`/${props.link}/${props.products.name}`}>
+              <button>More Details</button>
+            </Link>
           </div>
         </div>
-      </Link>
+      </motion.div>
     </Div>
   );
 };

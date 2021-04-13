@@ -1,22 +1,49 @@
 import React from "react";
 import Product from "./product";
-import Nav from "./nav";
 import styled from "styled-components";
-import { Footer } from "./footer";
+import { motion } from "framer-motion";
+import { animation, transition } from "./animation";
+import ScrollToTop from "./ScrollTop";
 
 const Div = styled.div`
   background-color: #130030;
+  padding-bottom: 100px;
+  background: rgb(18, 0, 51);
+  background: linear-gradient(
+    0deg,
+    rgba(18, 0, 51, 1) 10%,
+    rgba(38, 9, 94, 1) 100%
+  );
 
-  .distillate-title {
-    padding-top: 15%;
-    text-align: center;
-    color: #d5931c;
-    font-size: 3rem;
+  .title {
+    position: relative;
+    z-index: 99;
+    padding-bottom: 25%;
+    .distillate-title {
+      padding-top: 15%;
+      text-align: center;
+      color: #d5931c;
+      font-size: 3rem;
+      z-index: 99;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -70%);
+      &-bg {
+        color: #200750;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -30%);
+        z-index: 00;
+        font-size: 10rem;
+      }
+    }
   }
 
   .showMore {
     display: block;
-    margin: 20px auto 100px auto;
+    margin: 20px auto 0px auto;
     background-color: #d5931c;
     padding: 20px 40px;
     font-weight: 500;
@@ -28,20 +55,30 @@ const Div = styled.div`
 
 let Distillate = (props) => {
   return (
-    <Div>
-      <Nav />
-      <h1 className="distillate-title">Distillate</h1>
+    <motion.div
+      initial="out"
+      animate="in"
+      exit="out"
+      variants={animation}
+      transition={transition}
+    >
+      <ScrollToTop />
+      <Div>
+        <div className="title">
+          <h1 className="distillate-title-bg">Distillate</h1>
 
-      <div className="product-container">
-        {props.products.map((product) => (
-          <Product products={product} link="Distillate" />
-        ))}
-      </div>
+          <h1 className="distillate-title">Distillate</h1>
+        </div>
 
-      <button className="showMore">Show More (10)</button>
+        <div className="product-container">
+          {props.products.map((product) => (
+            <Product products={product} link="Distillate" />
+          ))}
+        </div>
 
-      <Footer />
-    </Div>
+        <button className="showMore">Show More (10)</button>
+      </Div>
+    </motion.div>
   );
 };
 
