@@ -90,9 +90,14 @@ const Div = styled.div`
 
       .icons {
         display: flex;
+        .icon-container {
+          display: grid;
+          align-content: center;
+        }
         img {
           width: 20px;
           margin: 10px;
+          align-items: center;
           &:nth-child(1) {
             margin-left: 0px;
           }
@@ -169,9 +174,15 @@ let Product = (props) => {
             <p className="product-desc">{props.products.description}</p>
 
             <div className="icons">
-              <img src={props.products.ImgLink1} alt="" />
-              <img src={props.products.ImgLink2} alt="" />
-              <img src={props.products.ImgLink3} alt="" />
+              <div className="icon-container">
+                <img src={props.products.ImgLink1} alt="" />
+              </div>
+              <div className="icon-container">
+                <img src={props.products.ImgLink2} alt="" />
+              </div>
+              <div className="icon-container">
+                <img src={props.products.ImgLink3} alt="" />
+              </div>
             </div>
 
             <Link to={`/${props.link}/${props.products.name}`}>
