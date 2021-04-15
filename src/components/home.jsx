@@ -111,10 +111,14 @@ const Hero = styled.div`
     }
   }
 
-  @media (max-width: 400px) {
+  @media (max-width: 430px) {
     .text-container {
       p {
-        font-size: 12px;
+        font-size: 13px;
+      }
+
+      button {
+        font-size: 13px;
       }
     }
   }
@@ -125,7 +129,6 @@ const Products = styled.div`
   box-sizing: border-box;
   background-color: #120033;
   padding: 100px;
-  /* padding-bottom: 0px; */
   min-height: 105vh;
   overflow-x: hidden;
 
@@ -164,8 +167,12 @@ const Products = styled.div`
 
     .link {
       position: absolute;
-      bottom: 20%;
+      bottom: 15%;
       z-index: 2;
+    }
+
+    .full {
+      transform: translateY(2px);
     }
   }
 
@@ -202,31 +209,47 @@ const Products = styled.div`
   }
 
   @media (max-width: 600px) {
+    padding: 100px 5%;
+    p {
+      font-size: 1rem;
+      width: 100%;
+    }
     .product-choice {
+      top: -100px;
       img {
-        width: 600px;
+        width: 700px;
       }
       div:nth-child(1) {
-        left: -10%;
+        left: -10vw;
       }
       div:nth-child(2) {
-        right: -10%;
+        right: -10vw;
       }
     }
   }
 
-  @media (max-width: 400px) {
+  @media (max-width: 450px) {
+    min-height: 700px;
     .product-choice {
+      top: 0px;
+
       img {
         width: 400px;
       }
       div:nth-child(1) {
-        left: -30%;
+        /* left: -35%; */
+        left: -5vw;
       }
       div:nth-child(2) {
-        right: -30%;
+        /* right: -35%; */
+        right: -5vw;
       }
     }
+  }
+
+  @media (max-width: 340px) {
+    min-height: 600px;
+    /* background-color: pink; */
   }
 `;
 
@@ -246,8 +269,37 @@ const Button = styled.button`
   outline: none;
   transition: all 0.1s ease;
   cursor: pointer;
+
   &:hover {
     transform: scale(1.02);
+  }
+
+  @media (max-width: 770px) {
+    width: 200px;
+  }
+
+  @media (max-width: 600px) {
+    width: 200px;
+    /* padding: 10px; */
+    font-size: 16px;
+  }
+
+  @media (max-width: 550px) {
+    width: 150px;
+    /* padding: 10px; */
+    font-size: 13px;
+  }
+
+  @media (max-width: 450px) {
+    width: 140px;
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  @media (max-width: 350px) {
+    font-size: 10px;
+    padding: 8px;
+    width: 120px;
   }
 `;
 
@@ -281,8 +333,27 @@ const Highlights = styled.div`
 
     div:nth-child(1) {
       grid-column: 1/3;
-      grid-row: 1/2;
+      grid-row: 1/3;
       background-color: #080114;
+    }
+
+    div:nth-child(2) {
+      grid-column: 3/4;
+      grid-row: 1/2;
+    }
+    div:nth-child(3) {
+      grid-column: 4/5;
+      grid-row: 1/2;
+    }
+
+    div:nth-child(4) {
+      grid-column: 3/4;
+      grid-row: 2/3;
+    }
+
+    div:nth-child(5) {
+      grid-column: 4/5;
+      grid-row: 2/3;
     }
   }
 
@@ -364,7 +435,7 @@ let Home = () => {
 
         <Products id="Products">
           <h1>Products</h1>
-          <p>Find out the details of our prouducts below.</p>
+          <p>Find out the details of our products below.</p>
 
           <div className="product-choice">
             <div>
@@ -375,7 +446,7 @@ let Home = () => {
             </div>
             <div>
               <img src={fullSpectrumImg} alt="" />
-              <Link to="/Full-Spectrum" className="link">
+              <Link to="/Full-Spectrum" className="link full">
                 <Button button="full-spectrum">Full Spectrum</Button>
               </Link>
             </div>

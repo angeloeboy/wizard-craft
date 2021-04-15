@@ -22,10 +22,6 @@ const Div = styled.div`
     color: white;
   }
 
-  /* &:hover {
-    background-color: #0d0024;
-  } */
-
   .inner-product {
     display: flex;
     align-items: center;
@@ -111,6 +107,50 @@ const Div = styled.div`
 
   @media (max-width: 900px) {
     width: 100%;
+  }
+
+  @media (max-width: 600px) {
+    .inner-product {
+      .img-container {
+        padding: 10px;
+        width: 40%;
+      }
+
+      .texts {
+        margin-left: 0px;
+        .product-name {
+          font-size: 10px;
+          padding-right: 0px;
+        }
+
+        .product-desc {
+          font-size: 10px;
+          margin-top: 5px;
+        }
+
+        .icons {
+          img {
+            width: 15px;
+          }
+        }
+
+        button {
+          font-size: 10px;
+          width: 70px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 500px) {
+    .inner-product {
+      .texts {
+        .product-name {
+          /* font-size: 12px; */
+          padding-right: 90px;
+        }
+      }
+    }
   }
 `;
 

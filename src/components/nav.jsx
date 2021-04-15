@@ -230,21 +230,21 @@ let Nav = () => {
             onClick={() => setNavVisibility(!isNavHidden)}
           />
           <ul>
-            <li>
+            <li onClick={() => setNavVisibility(!isNavHidden)}>
               <Link to="/">
                 <p>Home</p>
               </Link>
             </li>
-            <li>
+            <li onClick={() => setNavVisibility(!isNavHidden)}>
               {/* <Link to="/#products">
                 <p>Products</p>
               </Link> */}
               <a href="/#Products">Products</a>
             </li>
-            <li>
+            <li onClick={() => setNavVisibility(!isNavHidden)}>
               <a href="#Highlights">Highlights</a>
             </li>
-            <li>
+            <li onClick={() => setNavVisibility(!isNavHidden)}>
               <Link to="/About">
                 <p>About</p>
               </Link>

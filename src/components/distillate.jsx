@@ -14,6 +14,7 @@ const Div = styled.div`
     rgba(18, 0, 51, 1) 10%,
     rgba(38, 9, 94, 1) 100%
   );
+  overflow-x: hidden;
 
   .title {
     position: relative;
@@ -50,6 +51,30 @@ const Div = styled.div`
     color: white;
     font-size: 1rem;
     border: none;
+  }
+
+  @media (max-width: 1020px) {
+    .title {
+      margin-top: 155px;
+
+      .distillate-title {
+        width: 100vw;
+      }
+      .distillate-title-bg {
+        display: none;
+      }
+    }
+  }
+
+  @media (max-width: 500px) {
+    .title {
+      margin-top: 175px;
+
+      .distillate-title {
+        font-size: 2.5rem;
+        width: 100vw;
+      }
+    }
   }
 `;
 

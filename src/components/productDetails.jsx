@@ -13,6 +13,7 @@ const Div = styled.div`
   background-image: url(${bg});
   background-position: center;
   background-size: cover;
+  overflow-x: hidden;
   .product-description-container {
     padding: 15% 5%;
     display: flex;
@@ -22,6 +23,7 @@ const Div = styled.div`
 
     .texts-container {
       width: 50%;
+
       h1 {
         font-size: 25px;
         margin-top: 50px;
@@ -82,6 +84,79 @@ const Div = styled.div`
       width: 40%;
       img {
         width: 90%;
+      }
+    }
+  }
+
+  @media (max-width: 1000px) {
+    padding-bottom: 100px;
+    background-position: 30%;
+    .product-description-container {
+      flex-flow: column;
+      position: relative;
+
+      .texts-container {
+        width: 90%;
+      }
+      .cert-container {
+        width: 80%;
+        margin-top: 80px;
+        margin-bottom: 100px;
+      }
+
+      button {
+        position: absolute;
+        bottom: 0%;
+        font-size: 12px;
+        font-size: 12px;
+      }
+
+      .feeling {
+        .feeling-container {
+          .icon {
+            width: 15px;
+
+            img {
+              width: 50%;
+            }
+          }
+        }
+
+        p {
+          font-size: 12px;
+        }
+      }
+    }
+
+    .product-img {
+      width: 90%;
+      display: block;
+      margin: 0 auto;
+      margin-top: 170px;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .product-description-container {
+      flex-flow: column;
+
+      .texts-container {
+        width: 95%;
+
+        .details {
+          font-size: 12px;
+        }
+      }
+      .cert-container {
+        width: 90%;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      button {
+        font-size: 12px;
       }
     }
   }

@@ -11,6 +11,8 @@ const Div = styled.div`
   background-size: cover;
   padding: 20px 5%;
   background-position: center;
+  box-sizing: border-box;
+
   .text {
     position: absolute;
     top: 50%;
@@ -34,6 +36,23 @@ const Div = styled.div`
 
     p {
       color: #ceccd5;
+    }
+  }
+
+  @media (max-width: 1090px) {
+    background-position: right;
+
+    .text {
+      width: 90%;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .text {
+      top: 60%;
+      h1 {
+        font-size: 3rem;
+      }
     }
   }
 `;
