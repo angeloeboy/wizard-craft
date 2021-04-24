@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import img from "../assets/product-logo/strawberry.png";
 import cert from "../assets/certs/psi.png";
 import { useHistory } from "react-router-dom";
 import ScrollToTop from "./ScrollTop";
@@ -14,12 +13,21 @@ const Div = styled.div`
   background-position: center;
   background-size: cover;
   overflow-x: hidden;
-  .product-description-container {
-    padding: 15% 5%;
+
+  .container {
+    max-width: 1500px;
     display: flex;
     justify-content: space-around;
-    color: white;
     align-items: center;
+    margin: 0 auto;
+  }
+
+  .product-description-container {
+    padding: 15% 5%;
+    /* display: flex;
+    justify-content: space-around;
+    align-items: center; */
+    color: white;
 
     .texts-container {
       width: 50%;
@@ -82,18 +90,28 @@ const Div = styled.div`
     }
     .cert-container {
       width: 40%;
+      max-width: 500px;
       img {
         width: 90%;
       }
+    }
+    .product-img {
+      /* width: 60%; */
+      max-height: 80px;
     }
   }
 
   @media (max-width: 1000px) {
     padding-bottom: 100px;
     background-position: 30%;
-    .product-description-container {
+
+    .container {
       flex-flow: column;
       position: relative;
+    }
+    .product-description-container {
+      /* flex-flow: column;
+      position: relative; */
 
       .texts-container {
         width: 90%;
@@ -126,13 +144,13 @@ const Div = styled.div`
           font-size: 12px;
         }
       }
-    }
 
-    .product-img {
-      width: 90%;
-      display: block;
-      margin: 0 auto;
-      margin-top: 170px;
+      .product-img {
+        /* width: 90%; */
+        display: block;
+        margin: 0 auto;
+        margin-top: 170px;
+      }
     }
   }
 
@@ -158,6 +176,10 @@ const Div = styled.div`
       button {
         font-size: 12px;
       }
+
+      .product-img {
+        width: 90%;
+      }
     }
   }
 `;
@@ -179,51 +201,57 @@ let ProductDetails = (props) => {
       <Div>
         <ScrollToTop />
         <div className="product-description-container">
-          <div className="texts-container">
-            <img src={img} alt="" className="product-img" />
+          <div className="container">
+            <div className="texts-container">
+              <img
+                src={props.products.ProductLogo}
+                alt=""
+                className="product-img"
+              />
 
-            <h1>{props.products.name}</h1>
-            <div className="feeling">
-              <div className="feeling-container">
-                <div className="icon">
-                  <img src={props.products.ImgLink1} alt="" />
+              <h1>{props.products.name}</h1>
+              <div className="feeling">
+                <div className="feeling-container">
+                  <div className="icon">
+                    <img src={props.products.ImgLink1} alt="" />
+                  </div>
+                  <p>{props.products.feeling1}</p>
                 </div>
-                <p>{props.products.feeling1}</p>
-              </div>
-              <div className="feeling-container">
-                <div className="icon">
-                  <img src={props.products.ImgLink2} alt="" />
+                <div className="feeling-container">
+                  <div className="icon">
+                    <img src={props.products.ImgLink2} alt="" />
+                  </div>
+                  <p>{props.products.feeling2}</p>
                 </div>
-                <p>{props.products.feeling2}</p>
-              </div>
-              <div className="feeling-container">
-                <div className="icon">
-                  <img src={props.products.ImgLink3} alt="" />
+                <div className="feeling-container">
+                  <div className="icon">
+                    <img src={props.products.ImgLink3} alt="" />
+                  </div>
+                  <p>{props.products.feeling3}</p>
                 </div>
-                <p>{props.products.feeling3}</p>
               </div>
-            </div>
-            <ul>
-              {/* {props.products.feelings.map((feeling) => {
+              <ul>
+                {/* {props.products.feelings.map((feeling) => {
                 return <li>{feeling}</li>;
               })} */}
-            </ul>
-            <p>
-              <span>TYPE: </span> {props.products.description}
-            </p>
-            <p className="details-title">
-              {" "}
-              <span>STRAIN DETAILS</span>{" "}
-            </p>
-            <p className="details">{props.products.details}</p>
+              </ul>
+              <p>
+                <span>TYPE: </span> {props.products.description}
+              </p>
+              <p className="details-title">
+                {" "}
+                <span>STRAIN DETAILS</span>{" "}
+              </p>
+              <p className="details">{props.products.details}</p>
 
-            <button onClick={goToPreviousPath}>Back</button>
-          </div>
+              <button onClick={goToPreviousPath}>Back</button>
+            </div>
 
-          <div className="cert-container">
-            <img src={cert} alt="" />
+            <div className="cert-container">
+              <img src={cert} alt="" />
+            </div>
+            {/* <img src={bg} alt="" /> */}
           </div>
-          {/* <img src={bg} alt="" /> */}
         </div>
       </Div>
     </motion.div>

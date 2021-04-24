@@ -8,15 +8,24 @@ import whatsapp from "../assets/logos/whatsapp.svg";
 
 const Foot = styled.footer`
   background-color: #1d0055;
-  display: flex;
-  justify-content: space-around;
+  /* display: flex;
+  justify-content: space-around; */
   width: 100%;
-  align-items: center;
-  padding: 70px 0px;
-  position: relative;
+  /* align-items: center; */
+  /* padding: 70px 0px; */
+  /* position: relative; */
   overflow-x: hidden;
   box-sizing: border-box;
 
+  .container {
+    padding: 70px 0px;
+    max-width: 1500px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    position: relative;
+  }
   div {
     padding: 10px;
 
@@ -83,10 +92,13 @@ const Foot = styled.footer`
   }
 
   @media (max-width: 900px) {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-template-rows: auto auto auto;
-    padding: 120px 4% 70px 0px;
+    .container {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      grid-template-rows: auto auto auto;
+      padding: 120px 4% 70px 0px;
+    }
+
     .copyright {
       grid-column-start: 1;
       grid-column-end: 4;
@@ -134,49 +146,51 @@ const Foot = styled.footer`
 export let Footer = () => {
   return (
     <Foot>
-      <div className="copyright">
-        <p>© Glen Vale 2021</p>
-      </div>
+      <div className="container">
+        <div className="copyright">
+          <p>© Glen Vale 2021</p>
+        </div>
 
-      <div className="contact">
-        <p>Contact Info</p>
-        <a href="www.facebook.com">Lorem Ipsum</a>
-        <a href="www.facebook.com">Lorem Ipsum</a>
-        <a href="www.facebook.com">Lorem Ipsum</a>
-      </div>
+        <div className="contact">
+          <p>Contact Info</p>
+          <a href="www.facebook.com">Lorem Ipsum</a>
+          <a href="www.facebook.com">Lorem Ipsum</a>
+          <a href="www.facebook.com">Lorem Ipsum</a>
+        </div>
 
-      <div className="contact">
-        <p>Contact Info</p>
-        <a href="www.facebook.com">Lorem Ipsum</a>
-        <a href="www.facebook.com">Lorem Ipsum</a>
-        <a href="www.facebook.com">Lorem Ipsum</a>
-      </div>
+        <div className="contact">
+          <p>Contact Info</p>
+          <a href="www.facebook.com">Lorem Ipsum</a>
+          <a href="www.facebook.com">Lorem Ipsum</a>
+          <a href="www.facebook.com">Lorem Ipsum</a>
+        </div>
 
-      <div className="contact">
-        <p>Contact Info</p>
-        <a href="www.facebook.com">Lorem Ipsum</a>
-        <a href="www.facebook.com">Lorem Ipsum</a>
-        <a href="www.facebook.com">Lorem Ipsum</a>
-      </div>
+        <div className="contact">
+          <p>Contact Info</p>
+          <a href="www.facebook.com">Lorem Ipsum</a>
+          <a href="www.facebook.com">Lorem Ipsum</a>
+          <a href="www.facebook.com">Lorem Ipsum</a>
+        </div>
 
-      <div className="social-medias">
-        <a href="www.facebook.com">
-          <img src={fb} alt="" />
-        </a>
-        <a href="www.facebook.com">
-          <img src={ig} alt="" />
-        </a>
-        <a href="www.facebook.com">
-          <img src={gplus} alt="" />
-        </a>
-        <a href="www.facebook.com">
-          <img src={linkedin} alt="" />
-        </a>
-        <a href="www.facebook.com">
-          <img src={whatsapp} alt="" />
-        </a>
+        <div className="social-medias">
+          <a href="www.facebook.com">
+            <img src={fb} alt="" />
+          </a>
+          <a href="www.facebook.com">
+            <img src={ig} alt="" />
+          </a>
+          <a href="www.facebook.com">
+            <img src={gplus} alt="" />
+          </a>
+          <a href="www.facebook.com">
+            <img src={linkedin} alt="" />
+          </a>
+          <a href="www.facebook.com">
+            <img src={whatsapp} alt="" />
+          </a>
+        </div>
+        <div className="copyrightSquare"></div>
       </div>
-      <div className="copyrightSquare"></div>
     </Foot>
   );
 };

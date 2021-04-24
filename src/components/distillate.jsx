@@ -42,6 +42,11 @@ const Div = styled.div`
     }
   }
 
+  .product-container {
+    max-width: 1500px;
+    margin: 0 auto;
+  }
+
   .showMore {
     display: block;
     margin: 20px auto 0px auto;
@@ -79,6 +84,13 @@ const Div = styled.div`
 `;
 
 let Distillate = (props) => {
+  let product = [];
+
+  for (let i = 0; i < props.noOfProduct; i++) {
+    let item = props.products[i];
+    product.push(<Product products={item} link="Distillate" />);
+  }
+
   return (
     <motion.div
       initial="out"
@@ -95,13 +107,22 @@ let Distillate = (props) => {
           <h1 className="distillate-title">Distillate</h1>
         </div>
 
-        <div className="product-container">
-          {props.products.map((product) => (
-            <Product products={product} link="Distillate" />
-          ))}
-        </div>
+        <div className="product-container">{product}</div>
 
-        <button className="showMore">Show More (10)</button>
+        <button
+          className="showMore"
+          onClick={() => {
+            if (props.products.length - props.noOfProduct >= 5) {
+              props.setNoOfProduct(props.noOfProduct + 5);
+            } else {
+              props.setNoOfProduct(
+                props.noOfProduct + (props.products.length - props.noOfProduct)
+              );
+            }
+          }}
+        >
+          Show More ({props.products.length - props.noOfProduct})
+        </button>
       </Div>
     </motion.div>
   );

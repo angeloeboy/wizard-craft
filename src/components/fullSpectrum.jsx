@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import Product from "./product";
-import Nav from "./nav";
 import styled from "styled-components";
-import { Footer } from "./footer";
 import { motion } from "framer-motion";
 import { animation, transition } from "./animation";
 import ScrollToTop from "./ScrollTop";
@@ -46,6 +44,10 @@ const Div = styled.div`
       }
     }
   }
+  .product-container {
+    max-width: 1500px;
+    margin: 0 auto;
+  }
 
   .showMore {
     display: block;
@@ -84,11 +86,11 @@ const Div = styled.div`
 `;
 
 let FullSpectrum = (props) => {
-  let [noOfProduct, setNoOfProduct] = useState(5);
+  // let [noOfProduct, setNoOfProduct] = useState(5);
 
   let product = [];
 
-  for (let i = 0; i < noOfProduct; i++) {
+  for (let i = 0; i < props.noOfProduct; i++) {
     let item = props.products[i];
     product.push(<Product products={item} link="Full-Spectrum" />);
   }
@@ -108,20 +110,20 @@ let FullSpectrum = (props) => {
 
           <h1 className="fullSpectrum-title">Full Spectrum</h1>
         </div>
-        <div className="product-container">
-          {/* {props.products.map((product) => (
-          <Product products={product} link="Full-Spectrum" />
-        ))} */}
-
-          {product}
-        </div>
+        <div className="product-container">{product}</div>
         <button
           className="showMore"
-          onClick={() =>
-            setNoOfProduct(noOfProduct + (props.products.length - noOfProduct))
-          }
+          onClick={() => {
+            if (props.products.length - props.noOfProduct >= 5) {
+              props.setNoOfProduct(props.noOfProduct + 5);
+            } else {
+              props.setNoOfProduct(
+                props.noOfProduct + (props.products.length - props.noOfProduct)
+              );
+            }
+          }}
         >
-          Show More ({props.products.length - noOfProduct})
+          Show More ({props.products.length - props.noOfProduct})
         </button>
       </Div>
     </motion.div>

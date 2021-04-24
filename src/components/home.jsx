@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { BrowserRouter as Router, Link, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { animation, transition } from "./animation";
 
@@ -21,15 +21,24 @@ const Main = styled.div`
 `;
 
 const Hero = styled.div`
-  padding: 0px 5%;
-  display: flex;
+  /* display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between; */
   background-image: url(${HeroImg});
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
-  min-height: 100vh;
+  overflow-x: hidden;
+  .container {
+    max-width: 1500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 900px;
+    margin: 0 auto;
+    padding: 0px 5%;
+  }
+
   .text-container {
     width: 50%;
     margin-top: 20px;
@@ -75,16 +84,19 @@ const Hero = styled.div`
 
   .hero-image {
     width: 50%;
-    /* background-color: green; */
     img {
-      width: 500px;
+      width: 600px;
+      margin-left: 120px;
     }
   }
 
   @media (max-width: 900px) {
-    flex-direction: column-reverse;
-    align-items: center;
-    padding: 10vh 5%;
+    .container {
+      flex-direction: column-reverse;
+      align-items: center;
+      padding: 10vh 5%;
+    }
+
     .text-container {
       width: 100%;
     }
@@ -92,11 +104,16 @@ const Hero = styled.div`
       width: 70%;
       img {
         width: 100%;
+        margin: 0px;
       }
     }
   }
 
   @media (max-width: 600px) {
+    .container {
+      min-height: 100vh;
+    }
+
     .text-container {
       h1:nth-child(1) {
         font-size: 2rem;
@@ -113,6 +130,13 @@ const Hero = styled.div`
 
   @media (max-width: 430px) {
     .text-container {
+      h1:nth-child(1) {
+        font-size: 1.5rem;
+      }
+      h1:nth-child(2) {
+        font-size: 40px;
+        margin-top: 0px;
+      }
       p {
         font-size: 13px;
       }
@@ -129,8 +153,13 @@ const Products = styled.div`
   box-sizing: border-box;
   background-color: #120033;
   padding: 100px;
-  min-height: 105vh;
+  min-height: 900px;
   overflow-x: hidden;
+
+  .container {
+    max-width: 1500px;
+    margin: 0 auto;
+  }
 
   h1 {
     color: #d5931c;
@@ -308,6 +337,10 @@ const Highlights = styled.div`
   background-color: #0f0028;
   padding-bottom: 50px;
 
+  .container {
+    max-width: 1500px;
+    margin: 0 auto;
+  }
   .text {
     width: 50%;
     padding: 50px;
@@ -416,69 +449,75 @@ let Home = () => {
       <ScrollToTop />
       <Main>
         <Hero>
-          <div className="text-container">
-            <h1>Welcome to</h1>
-            <h1>Wizard Craft</h1>
-            <div className="line"></div>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
-              ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas
-              accumsan lacus vel facilisis.{" "}
-            </p>
-            <button>Contact Us</button>
-          </div>
-          <div className="hero-image">
-            <img src={LogoHomePage} alt="" />
+          <div className="container">
+            <div className="text-container">
+              <h1>Welcome to</h1>
+              <h1>Wizard Cart</h1>
+              <div className="line"></div>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
+                ipsum suspendisse ultrices gravida. Risus commodo viverra
+                maecenas accumsan lacus vel facilisis.{" "}
+              </p>
+              <button>Contact Us</button>
+            </div>
+            <div className="hero-image">
+              <img src={LogoHomePage} alt="" />
+            </div>
           </div>
         </Hero>
 
         <Products id="Products">
-          <h1>Products</h1>
-          <p>Find out the details of our products below.</p>
+          <div className="container">
+            <h1>Products</h1>
+            <p>Find out the details of our products below.</p>
 
-          <div className="product-choice">
-            <div>
-              <img src={distillateImg} alt="distillate" />
-              <Link to="/Distillate" className="link">
-                <Button button="distillate">Distillate</Button>
-              </Link>
-            </div>
-            <div>
-              <img src={fullSpectrumImg} alt="" />
-              <Link to="/Full-Spectrum" className="link full">
-                <Button button="full-spectrum">Full Spectrum</Button>
-              </Link>
+            <div className="product-choice">
+              <div>
+                <img src={distillateImg} alt="distillate" />
+                <Link to="/Distillate" className="link">
+                  <Button button="distillate">Distillate</Button>
+                </Link>
+              </div>
+              <div>
+                <img src={fullSpectrumImg} alt="" />
+                <Link to="/Full-Spectrum" className="link full">
+                  <Button button="full-spectrum">Full Spectrum</Button>
+                </Link>
+              </div>
             </div>
           </div>
         </Products>
 
         <Highlights id="Highlights">
-          <div className="text">
-            <h1>Highlights</h1>
-            <p>
-              {" "}
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
-              mattis non magna id scelerisque. Nullam urna justo, facilisis
-              aliquam leo non, pellentesque malesuada est.
-            </p>
-          </div>
+          <div className="container">
+            <div className="text">
+              <h1>Highlights</h1>
+              <p>
+                {" "}
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
+                mattis non magna id scelerisque. Nullam urna justo, facilisis
+                aliquam leo non, pellentesque malesuada est.
+              </p>
+            </div>
 
-          <div className="highlights-img">
-            <div>
-              <img src={bigImg} alt="bigimage" />
-            </div>
-            <div>
-              <img src={img1} alt="bigimage" />
-            </div>
-            <div>
-              <img src={img2} alt="bigimage" />
-            </div>
-            <div>
-              <img src={img3} alt="bigimage" />
-            </div>
-            <div>
-              <img src={img4} alt="bigimage" />
+            <div className="highlights-img">
+              <div>
+                <img src={bigImg} alt="bigimage" />
+              </div>
+              <div>
+                <img src={img1} alt="bigimage" />
+              </div>
+              <div>
+                <img src={img2} alt="bigimage" />
+              </div>
+              <div>
+                <img src={img3} alt="bigimage" />
+              </div>
+              <div>
+                <img src={img4} alt="bigimage" />
+              </div>
             </div>
           </div>
         </Highlights>

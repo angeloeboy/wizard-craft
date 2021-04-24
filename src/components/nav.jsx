@@ -15,10 +15,18 @@ const Navigation = styled.nav`
   z-index: 1000;
   position: fixed;
 
-  .nav-details {
+  .container {
+    max-width: 1500px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin: 0 auto;
+  }
+
+  .nav-details {
+    /* display: flex;
+    align-items: center;
+    justify-content: space-between; */
     background-color: #d5931c;
     padding: 0px 5%;
 
@@ -49,10 +57,10 @@ const Navigation = styled.nav`
   }
 
   .primary-nav {
-    display: flex;
-    align-items: center;
+    /* display: flex;
+    align-items: center; */
     padding: 30px 5%;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     transition: all 0.3s ease-in-out;
     background-color: ${(props) =>
       props.position === "top" ? "transparent" : "#2a0c5d"};
@@ -191,76 +199,80 @@ let Nav = () => {
   return (
     <Navigation position={pos} isHidden={isNavHidden}>
       <div className="nav-details">
-        <div className="nav-socmed-logo">
-          <a href="#asd">
-            <img src={fb} alt="" />
-          </a>
-          <a href="#asd">
-            <img src={ig} alt="" />
-          </a>
-          <a href="#asd">
-            <img src={gplus} alt="" />
-          </a>
-          <a href="#asd">
-            <img src={linkedin} alt="" />
-          </a>
-          <a href="#asd">
-            <img src={whatsapp} alt="" />
-          </a>
-        </div>
+        <div className="container">
+          <div className="nav-socmed-logo">
+            <a href="#asd">
+              <img src={fb} alt="" />
+            </a>
+            <a href="#asd">
+              <img src={ig} alt="" />
+            </a>
+            <a href="#asd">
+              <img src={gplus} alt="" />
+            </a>
+            <a href="#asd">
+              <img src={linkedin} alt="" />
+            </a>
+            <a href="#asd">
+              <img src={whatsapp} alt="" />
+            </a>
+          </div>
 
-        <div className="nav-phone">
-          <p>Phone | 000-000-00-</p>
+          <div className="nav-phone">
+            <p>Phone | 000-000-00-</p>
+          </div>
         </div>
       </div>
 
       <div className="primary-nav">
-        <div className="nav-logo">
-          <Link to="/">
-            <img src={Logo} alt="" />
-          </Link>
-        </div>
+        <div className="container">
+          <div className="nav-logo">
+            <Link to="/">
+              <img src={Logo} alt="" />
+            </Link>
+          </div>
 
-        <div className="nav-links">
-          <p className="browse">Browse Wizard Cart</p>
-          <img
-            src={arrow}
-            alt=""
-            className="arrow"
-            onClick={() => setNavVisibility(!isNavHidden)}
-          />
-          <ul>
-            <li onClick={() => setNavVisibility(!isNavHidden)}>
-              <Link to="/">
-                <p>Home</p>
-              </Link>
-            </li>
-            <li onClick={() => setNavVisibility(!isNavHidden)}>
-              {/* <Link to="/#products">
+          <div className="nav-links">
+            <p className="browse">Browse Wizard Cart</p>
+            <img
+              src={arrow}
+              alt=""
+              className="arrow"
+              onClick={() => setNavVisibility(!isNavHidden)}
+            />
+            <ul>
+              <li onClick={() => setNavVisibility(!isNavHidden)}>
+                <Link to="/">
+                  <p>Home</p>
+                </Link>
+              </li>
+              <li onClick={() => setNavVisibility(!isNavHidden)}>
+                {/* <Link to="/#products">
                 <p>Products</p>
               </Link> */}
-              <a href="/#Products">Products</a>
-            </li>
-            <li onClick={() => setNavVisibility(!isNavHidden)}>
-              <a href="#Highlights">Highlights</a>
-            </li>
-            <li onClick={() => setNavVisibility(!isNavHidden)}>
-              <Link to="/About">
-                <p>About</p>
-              </Link>
-            </li>
-          </ul>
-        </div>
+                <a href="/#Products">Products</a>
+              </li>
+              <li onClick={() => setNavVisibility(!isNavHidden)}>
+                <a href="#Highlights">Highlights</a>
+              </li>
+              <li onClick={() => setNavVisibility(!isNavHidden)}>
+                <Link to="/About">
+                  <p>About</p>
+                </Link>
+              </li>
+            </ul>
+          </div>
 
-        <div
-          className="nav-menuBar"
-          onClick={() => {
-            setNavVisibility(!isNavHidden);
-          }}
-        >
-          <div className="nav-bar"></div>
-          <div className="nav-bar"></div>
-          <div className="nav-bar"></div>
+          <div
+            className="nav-menuBar"
+            onClick={() => {
+              setNavVisibility(!isNavHidden);
+            }}
+          >
+            <div className="nav-bar"></div>
+            <div className="nav-bar"></div>
+            <div className="nav-bar"></div>
+          </div>
         </div>
       </div>
     </Navigation>

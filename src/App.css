@@ -13,6 +13,10 @@
   justify-content: space-around;
 }
 
+.container {
+  max-width: 1440px;
+}
+
 /* html,
 body {
   scroll-behavior: smooth;

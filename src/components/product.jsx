@@ -1,10 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import strawberry from "../assets/product-logo/strawberry.png";
 import { motion } from "framer-motion";
 
-import IMAGES from "../assets/product-icons/index";
+// import IMAGES from "../assets/product-icons/index";
 
 const Div = styled.div`
   box-sizing: border-box;
@@ -29,11 +28,13 @@ const Div = styled.div`
 
     .img-container {
       width: 35%;
+      /* height: 100%; */
       height: auto;
       padding: 20px;
-
+      text-align: center;
       img {
-        width: 100%;
+        max-width: 100%;
+        max-height: 50px;
       }
     }
     .texts {

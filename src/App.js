@@ -15,18 +15,31 @@ import { AnimatePresence } from "framer-motion"
 
 import fullSpectrumProducts from './components/fullSpectrumProducts';
 import distillateProducts from './components/distillateProducts';
+import { useState } from 'react';
+import CheckCountry from './components/checkCountry';
+
 
 function App() {
+  // let [isFSVisited, setFSVisited] = useState(false);
+  // let [isDVisited, setDVisited] = useState(false);
+  let [FnoOfProduct, FsetNoOfProduct] = useState(5);
+  let [DnoOfProduct, DsetNoOfProduct] = useState(5);
+  let [visited, setVisited] = useState(true);
 
   return (
     <Router>
       <div className="App">
         <Nav/>
-        <AnimatePresence exitBeforeEnter>
+
+        {!visited ? (
+          <CheckCountry/>
+        ):(
+          <AnimatePresence exitBeforeEnter>
+
           <Switch>
             <Route path="/" exact component={Home}/>
-            <Route path="/Distillate" exact render={(props) => <Distillate products={distillateProducts}/> }/>
-            <Route path="/Full-Spectrum" exact render={(props) => <FullSpectrum products={fullSpectrumProducts}/> }/>
+            <Route path="/Distillate" exact render={(props) => <Distillate products={distillateProducts} noOfProduct={DnoOfProduct} setNoOfProduct={DsetNoOfProduct}/> }/>
+            <Route path="/Full-Spectrum" exact render={(props) => <FullSpectrum products={fullSpectrumProducts} noOfProduct={FnoOfProduct} setNoOfProduct={FsetNoOfProduct}/> }/>
             <Route path="/About" exact component={About}/>
          
 
@@ -53,6 +66,9 @@ function App() {
 
           </Switch>
         </AnimatePresence>
+        )}
+
+       
         <Footer/>
           
       </div>
