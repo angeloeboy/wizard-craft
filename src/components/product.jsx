@@ -33,16 +33,16 @@ const Div = styled.div`
       padding: 20px;
       text-align: center;
       img {
-        max-width: 100%;
-        max-height: 50px;
+        max-width: 80%;
+        max-height: 30px;
       }
     }
     .texts {
       margin-left: 20px;
       width: 65%;
-      background-color: #2b0a69;
+      background-color: #2c0b6b;
       width: 60%;
-      padding: 20px;
+      padding: 18px 20px;
       padding-right: 0px;
       position: relative;
 
@@ -54,8 +54,7 @@ const Div = styled.div`
       }
 
       .product-desc {
-        margin-top: 10px;
-        font-weight: 400;
+        font-weight: 300;
       }
 
       button {
@@ -67,7 +66,7 @@ const Div = styled.div`
           rgba(74, 16, 166, 1) 0%,
           rgba(108, 34, 224, 1) 64%
         );
-        width: 80px;
+        width: 90px;
         border: none;
         height: 100%;
         padding: 5px 10px;
@@ -75,7 +74,7 @@ const Div = styled.div`
         top: 0px;
         right: 0;
         font-weight: 600;
-        font-size: 0.7rem;
+        font-size: 0.8rem;
       }
 
       .line {
@@ -96,8 +95,9 @@ const Div = styled.div`
           align-content: center;
         }
         img {
-          width: 20px;
-          margin: 10px;
+          width: 18px;
+          margin-top: 14px;
+          margin-right: 26px;
           align-items: center;
           &:nth-child(1) {
             margin-left: 0px;
@@ -137,6 +137,7 @@ const Div = styled.div`
         .icons {
           img {
             width: 15px;
+            margin-right: 10px;
           }
         }
 
@@ -152,7 +153,6 @@ const Div = styled.div`
     .inner-product {
       .texts {
         .product-name {
-          /* font-size: 12px; */
           padding-right: 90px;
         }
       }

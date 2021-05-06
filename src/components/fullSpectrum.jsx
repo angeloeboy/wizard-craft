@@ -82,6 +82,10 @@ const Div = styled.div`
         width: 100vw;
       }
     }
+
+    .showMore {
+      padding: 15px 40px;
+    }
   }
 `;
 

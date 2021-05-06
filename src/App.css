@@ -13,8 +13,16 @@
   justify-content: space-around;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .container {
   max-width: 1440px;
+}
+
+:root {
+  scroll-padding-top: 126px;
 }
 
 /* html,

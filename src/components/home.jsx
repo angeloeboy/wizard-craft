@@ -21,9 +21,6 @@ const Main = styled.div`
 `;
 
 const Hero = styled.div`
-  /* display: flex;
-  align-items: center;
-  justify-content: space-between; */
   background-image: url(${HeroImg});
   background-size: cover;
   background-attachment: fixed;
@@ -44,10 +41,11 @@ const Hero = styled.div`
     margin-top: 20px;
     h1 {
       color: white;
+      font-size: 20px;
     }
     h1:nth-child(1) {
       font-weight: 400;
-      font-size: 50px;
+      font-size: 40px;
     }
 
     h1:nth-child(2) {
@@ -68,7 +66,7 @@ const Hero = styled.div`
       color: white;
       opacity: 0.7;
       font-weight: 300;
-      font-size: 20px;
+      font-size: 18px;
     }
 
     button {
@@ -91,10 +89,13 @@ const Hero = styled.div`
   }
 
   @media (max-width: 900px) {
+    padding: 100px 0px;
+    background-position-x: 25%;
     .container {
       flex-direction: column-reverse;
       align-items: center;
-      padding: 10vh 5%;
+      justify-content: center;
+      min-height: initial;
     }
 
     .text-container {
@@ -111,7 +112,7 @@ const Hero = styled.div`
 
   @media (max-width: 600px) {
     .container {
-      min-height: 100vh;
+      /* min-height: 100vh; */
     }
 
     .text-container {
@@ -446,7 +447,7 @@ let Home = () => {
       variants={animation}
       transition={transition}
     >
-      <ScrollToTop />
+      {/* <ScrollToTop /> */}
       <Main>
         <Hero>
           <div className="container">
@@ -455,10 +456,10 @@ let Home = () => {
               <h1>Wizard Cart</h1>
               <div className="line"></div>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
-                ipsum suspendisse ultrices gravida. Risus commodo viverra
-                maecenas accumsan lacus vel facilisis.{" "}
+                We'll bring you the most premium quality strains available in
+                the country, that will help ease all medical conditions, such as
+                anxiety, stress, ADD/ADHD, depression, loss of appetite muscular
+                dystrophy, hypertension, insomnia, migraines, and many more.{" "}
               </p>
               <button>Contact Us</button>
             </div>
@@ -468,7 +469,7 @@ let Home = () => {
           </div>
         </Hero>
 
-        <Products id="Products">
+        <Products id="products">
           <div className="container">
             <h1>Products</h1>
             <p>Find out the details of our products below.</p>

@@ -17,10 +17,15 @@ import fullSpectrumProducts from './components/fullSpectrumProducts';
 import distillateProducts from './components/distillateProducts';
 import { useState } from 'react';
 import CheckCountry from './components/checkCountry';
+import styled from 'styled-components';
 
+const Div = styled.div`
+    overflow-x: hidden;
+  box-sizing: border-box;
+`
 
 function App() {
-  // let [isFSVisited, setFSVisited] = useState(false);
+  // let [isFSVisited, setFSVisited] = useState(false); 
   // let [isDVisited, setDVisited] = useState(false);
   let [FnoOfProduct, FsetNoOfProduct] = useState(5);
   let [DnoOfProduct, DsetNoOfProduct] = useState(5);
@@ -28,11 +33,11 @@ function App() {
 
   return (
     <Router>
-      <div className="App">
+      <Div className="App">
         <Nav/>
 
         {!visited ? (
-          <CheckCountry/>
+          <CheckCountry setVisited={setVisited}/>
         ):(
           <AnimatePresence exitBeforeEnter>
 
@@ -71,7 +76,7 @@ function App() {
        
         <Footer/>
           
-      </div>
+      </Div>
     </Router>
 
   );

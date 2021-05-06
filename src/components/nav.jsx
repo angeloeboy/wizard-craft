@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import Logo from "../assets/logo.png";
 import fb from "../assets/logos/facebook-logo.svg";
 import ig from "../assets/logos/instagram.svg";
@@ -8,6 +8,7 @@ import gplus from "../assets/logos/google-plus.svg";
 import linkedin from "../assets/logos/linkedin.svg";
 import whatsapp from "../assets/logos/whatsapp.svg";
 import arrow from "../assets/logos/arrowLeft.png";
+import { HashLink as Link } from "react-router-hash-link";
 
 const Navigation = styled.nav`
   /* position: fixed; */
@@ -247,13 +248,16 @@ let Nav = () => {
                 </Link>
               </li>
               <li onClick={() => setNavVisibility(!isNavHidden)}>
-                {/* <Link to="/#products">
-                <p>Products</p>
-              </Link> */}
-                <a href="/#Products">Products</a>
+                <Link to="/#products">
+                  <p>Products</p>
+                </Link>
+                {/* <a href="/#Products">Products</a> */}
               </li>
               <li onClick={() => setNavVisibility(!isNavHidden)}>
-                <a href="#Highlights">Highlights</a>
+                {/* <Link to="/#Highlights">
+                  <p>Highlights</p>
+                </Link> */}
+                <a href="/#Highlights">Highlights</a>
               </li>
               <li onClick={() => setNavVisibility(!isNavHidden)}>
                 <Link to="/About">
