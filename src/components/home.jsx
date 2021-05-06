@@ -495,12 +495,6 @@ let Home = () => {
           <div className="container">
             <div className="text">
               <h1>Highlights</h1>
-              <p>
-                {" "}
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
-                mattis non magna id scelerisque. Nullam urna justo, facilisis
-                aliquam leo non, pellentesque malesuada est.
-              </p>
             </div>
 
             <div className="highlights-img">
