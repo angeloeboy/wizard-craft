@@ -21,6 +21,7 @@ let Prompt = styled.div`
     padding: 60px 80px;
     width: 400px;
     box-shadow: 0px 0px 100px -40px #000000;
+
     h1 {
       color: #d3851d;
       font-size: 16px;
@@ -98,6 +99,25 @@ let Prompt = styled.div`
           padding: 10px 0px;
           font-weight: 500;
           font-size: 16px;
+        }
+      }
+    }
+
+    @media (max-width: 700px) {
+      width: 70%;
+      padding: 30px 40px;
+    }
+
+    @media (max-width: 400px) {
+      margin-top: 30px;
+
+      .atleast-21 {
+        .buttons {
+          button {
+            padding: 5px 0px;
+            font-size: 12px;
+            width: 120px;
+          }
         }
       }
     }
