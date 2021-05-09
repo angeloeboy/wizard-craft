@@ -104,7 +104,7 @@ let Prompt = styled.div`
     }
 
     @media (max-width: 700px) {
-      width: 70%;
+      width: 60%;
       padding: 30px 40px;
     }
 
