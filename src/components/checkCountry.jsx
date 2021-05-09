@@ -116,7 +116,7 @@ let Prompt = styled.div`
           button {
             padding: 5px 0px;
             font-size: 12px;
-            width: 100px;
+            width: 90px;
           }
         }
       }
