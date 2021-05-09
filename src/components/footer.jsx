@@ -5,191 +5,165 @@ import ig from "../assets/logos/instagram.svg";
 import gplus from "../assets/logos/google-plus.svg";
 import linkedin from "../assets/logos/linkedin.svg";
 import whatsapp from "../assets/logos/whatsapp.svg";
+import logo from "../assets/logo.png";
 
 const Foot = styled.footer`
   background-color: #1d0055;
-  /* display: flex;
-  justify-content: space-around; */
   width: 100%;
-  /* align-items: center; */
-  /* padding: 70px 0px; */
-  /* position: relative; */
   overflow-x: hidden;
   box-sizing: border-box;
 
   .container {
-    padding: 70px 0px;
+    padding: 70px 15%;
     max-width: 1500px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
     margin: 0 auto;
-    position: relative;
-  }
-  div {
-    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    font-weight: 300;
 
-    p {
-      margin: 0px;
-      color: #d5931c;
-      font-size: 1.1rem;
-      font-weight: 700;
+    h1 {
+      color: #ffa302;
+      font-size: 1rem;
+      font-weight: 500;
     }
 
-    a {
-      display: block;
+    .logo-texts {
       color: white;
-      text-decoration: none;
-      margin: 10px 0px;
-      margin: 5px 0px;
-      font-weight: 200;
-      font-size: 1.1rem;
+      grid-column: 1/3;
+      .logo {
+        width: 150px;
+      }
+
+      p {
+        margin-top: 20px;
+      }
     }
 
-    img {
-      width: 20px;
-      display: inline-block;
-      margin: 0px 10px;
-      margin-top: auto;
-    }
+    .footer-navigation {
+      grid-column: 4/6;
 
-    &:nth-child(5) {
-      margin-top: 10%;
+      .links {
+        margin-top: 5px;
 
-      a {
-        display: inline-block;
-        position: relative;
-        margin: 0px 20px;
-        img {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translateY(-50%);
-          transform: translateX(-50%);
+        a {
+          text-decoration: none;
+          color: white;
+
+          p {
+            margin-top: 5px;
+          }
         }
       }
     }
-  }
 
-  .copyright {
-    p {
-      font-size: 1rem;
-      font-weight: 300;
-      color: white;
-    }
-  }
+    .contacts {
+      grid-column: 6/7;
 
-  .copyrightSquare {
-    position: absolute;
-    top: 0;
-    left: 5%;
-    content: "";
-    width: 50px;
-    height: 100px;
-    /* background-color: pink; */
-    border: 1px solid #9387a8;
-    border-top: none;
-  }
-
-  @media (max-width: 900px) {
-    .container {
-      display: grid;
-      grid-template-columns: auto auto auto;
-      grid-template-rows: auto auto auto;
-      padding: 120px 4% 70px 0px;
+      .icons {
+        display: flex;
+        align-items: center;
+        margin-top: 5px;
+        a {
+          margin-right: 20px;
+          img {
+            width: 15px;
+          }
+        }
+      }
     }
 
-    .copyright {
-      grid-column-start: 1;
-      grid-column-end: 4;
-      grid-row-start: 1;
-      grid-row-end: 2;
+    @media (max-width: 830px) {
+      grid-template-rows: 3fr 1fr 3fr;
+      padding: 70px 5%;
+      .logo-texts {
+        grid-column: 1/8;
+        grid-row: 1/1;
+      }
+
+      .footer-navigation {
+        grid-column: 1/6;
+        grid-row: 3/4;
+      }
+
+      .contacts {
+        grid-column: 4/7;
+        grid-row: 3/4;
+      }
     }
 
-    div:nth-child(2) {
-      grid-column-start: 1;
-      grid-column-end: 2;
-      grid-row-start: 2;
-      grid-row-end: 3;
-    }
-
-    div:nth-child(3) {
-      grid-column-start: 2;
-      grid-column-end: 3;
-      grid-row-start: 2;
-      grid-row-end: 3;
-    }
-
-    div:nth-child(4) {
-      grid-column-start: 3;
-      grid-column-end: 4;
-      grid-row-start: 2;
-      grid-row-end: 3;
-    }
-
-    div:nth-child(5) {
-      grid-column-start: 1;
-      grid-column-end: 4;
-      grid-row-start: 3;
-      grid-row-end: 4;
-      text-align: center;
-    }
-  }
-
-  @media (max-width: 900px) {
-    .contact {
-      text-align: center;
+    @media (max-width: 400px) {
+      .logo-texts {
+        p {
+          font-size: 0.8rem;
+        }
+      }
     }
   }
 `;
 
 export let Footer = () => {
   return (
-    <Foot>
+    <Foot id="footer">
       <div className="container">
-        <div className="copyright">
-          <p>© Glen Vale 2021</p>
+        <div className="logo-texts">
+          <img src={logo} alt="" className="logo" />
+          <p>
+            Wizard carts are focused on quality. We want our consumers to enjoy
+            the highest quality vape that is possible.
+          </p>
         </div>
 
-        <div className="contact">
-          <p>Contact Info</p>
-          <a href="www.facebook.com">Lorem Ipsum</a>
-          <a href="www.facebook.com">Lorem Ipsum</a>
-          <a href="www.facebook.com">Lorem Ipsum</a>
+        <div className="footer-navigation">
+          <h1>Navigation</h1>
+          <div className="links">
+            <a href="#home">
+              <p>Home</p>
+            </a>
+            <a href="#products">
+              <p>Products</p>
+            </a>
+            <a href="#Highlights">
+              <p>Highlights</p>
+            </a>
+            <a href="/About">
+              <p>About</p>
+            </a>
+          </div>
         </div>
 
-        <div className="contact">
-          <p>Contact Info</p>
-          <a href="www.facebook.com">Lorem Ipsum</a>
-          <a href="www.facebook.com">Lorem Ipsum</a>
-          <a href="www.facebook.com">Lorem Ipsum</a>
-        </div>
+        <div className="contacts">
+          <h1>Contacts</h1>
 
-        <div className="contact">
-          <p>Contact Info</p>
-          <a href="www.facebook.com">Lorem Ipsum</a>
-          <a href="www.facebook.com">Lorem Ipsum</a>
-          <a href="www.facebook.com">Lorem Ipsum</a>
+          <div className="icons">
+            <a
+              href="https://web.facebook.com/wizardcart"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={fb} alt="" />
+            </a>
+            <a
+              href="https://www.instagram.com/wizardcart"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={ig} alt="" />
+            </a>
+            <a
+              href="mailto:wizardcartridge@gmail.com"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={gplus} alt="" />
+            </a>
+            <a href="" target="_blank">
+              <img src={linkedin} alt="" />
+            </a>
+            <a href="" target="_blank">
+              <img src={whatsapp} alt="" />
+            </a>
+          </div>
         </div>
-
-        <div className="social-medias">
-          <a href="www.facebook.com">
-            <img src={fb} alt="" />
-          </a>
-          <a href="www.facebook.com">
-            <img src={ig} alt="" />
-          </a>
-          <a href="www.facebook.com">
-            <img src={gplus} alt="" />
-          </a>
-          <a href="www.facebook.com">
-            <img src={linkedin} alt="" />
-          </a>
-          <a href="www.facebook.com">
-            <img src={whatsapp} alt="" />
-          </a>
-        </div>
-        <div className="copyrightSquare"></div>
       </div>
     </Foot>
   );

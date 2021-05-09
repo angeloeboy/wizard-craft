@@ -59,6 +59,7 @@ let Prompt = styled.div`
         transform: translateY(0px);
         padding: 10px;
         box-sizing: border-box;
+        z-index: 10;
 
         p {
           font-size: 16px;
@@ -105,6 +106,8 @@ let Prompt = styled.div`
 let CheckCountry = (props) => {
   let [country, setCountry] = useState("United States");
   let [countryChoiceVisible, setCountryChoiceVisibility] = useState(false);
+  let [canadaCountriesVisible, setCanadaCountryVisibility] = useState(false);
+  let [canadaState, setCanadaState] = useState("Select a region");
 
   return (
     <Prompt>
@@ -146,6 +149,63 @@ let CheckCountry = (props) => {
             </div>
           )}
         </div>
+
+        {country === "Canada" ? (
+          <div
+            className="dropwDownContainer"
+            onClick={() => setCanadaCountryVisibility(!canadaCountriesVisible)}
+          >
+            <div className="container">
+              <div className="texts">
+                <p>Which part of Canada?</p>
+                <p>{canadaState}</p>
+              </div>
+
+              <div className="icon-container">
+                <img src={icon} alt="" />
+              </div>
+            </div>
+
+            {canadaCountriesVisible && (
+              <div className="country-choice">
+                <p>Countries</p>
+                <ul>
+                  <li onClick={() => setCanadaState("Select a region")}>
+                    Select a region
+                  </li>
+                  <li onClick={() => setCanadaState("Alberta")}>Alberta</li>
+                  <li onClick={() => setCanadaState("British Columbia")}>
+                    British Columbia
+                  </li>
+
+                  <li onClick={() => setCanadaState("Manitoba")}>Manitoba</li>
+                  <li onClick={() => setCanadaState("New Brunswick")}>
+                    New Brunswick
+                  </li>
+                  <li onClick={() => setCanadaState("Newdoundland & Labrador")}>
+                    Newdoundland & Labrador
+                  </li>
+                  <li onClick={() => setCanadaState("Northwest Territories ")}>
+                    Northwest Territories
+                  </li>
+                  <li onClick={() => setCanadaState("Nova Scotia")}>
+                    Nova Scotia
+                  </li>
+                  <li onClick={() => setCanadaState("Nunavut")}>Nunavut</li>
+                  <li onClick={() => setCanadaState("Ontario")}>Ontario</li>
+                  <li onClick={() => setCanadaState("Prince Edward Island")}>
+                    Prince Edward Island
+                  </li>
+                  <li onClick={() => setCanadaState("Quebec")}>Quebec</li>
+                  <li onClick={() => setCanadaState("Saskatchewan")}>
+                    Saskatchewan
+                  </li>
+                  <li onClick={() => setCanadaState("Yukon")}>Yukon</li>
+                </ul>
+              </div>
+            )}
+          </div>
+        ) : null}
 
         <div className="atleast-21">
           <p>Are you atleast 21?</p>

@@ -461,7 +461,9 @@ let Home = () => {
                 anxiety, stress, ADD/ADHD, depression, loss of appetite muscular
                 dystrophy, hypertension, insomnia, migraines, and many more.{" "}
               </p>
-              <button>Contact Us</button>
+              <a href="#footer">
+                <button>Contact Us</button>
+              </a>
             </div>
             <div className="hero-image">
               <img src={LogoHomePage} alt="" />

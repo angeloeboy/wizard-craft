@@ -13,6 +13,10 @@ const Div = styled.div`
   background-position: center;
   box-sizing: border-box;
 
+  .container {
+    max-width: 1550px;
+    margin: 0 auto;
+  }
   .text {
     position: absolute;
     top: 50%;
@@ -72,26 +76,29 @@ let About = () => {
     >
       <ScrollToTop />
       <Div>
-        <div className="text">
-          <h1>
-            <span>About </span>Us
-          </h1>
-          <div className="line"></div>
-          <p>
-            Wizard carts are focused on quality. We want our consumers to enjoy
-            the highest quality vape that is possible. You can trust Wizard to
-            never cut corners on quality or price to make a quick dollar. we are
-            focused on safety and quality. We show lab testing and the dates of
-            the testing to keep our customers up to date on what’s going into
-            there body to help build a trusting relationship. If you have any
-            questions or concerns please reach out.
-          </p>
-          <p>
-            Our goal at wizard carts is to help our customers have a trust
-            worthy product they can vape without and illnesses. Wizard carts
-            sends our condolences to families dealing with vaping related
-            illnesses.
-          </p>
+        <div className="container">
+          <div className="text">
+            <h1>
+              <span>About </span>Us
+            </h1>
+            <div className="line"></div>
+            <p>
+              Wizard carts are focused on quality. We want our consumers to
+              enjoy the highest quality vape that is possible. You can trust
+              Wizard to never cut corners on quality or price to make a quick
+              dollar. we are focused on safety and quality. We show lab testing
+              and the dates of the testing to keep our customers up to date on
+              what’s going into there body to help build a trusting
+              relationship. If you have any questions or concerns please reach
+              out.
+            </p>
+            <p>
+              Our goal at wizard carts is to help our customers have a trust
+              worthy product they can vape without and illnesses. Wizard carts
+              sends our condolences to families dealing with vaping related
+              illnesses.
+            </p>
+          </div>
         </div>
       </Div>
     </motion.div>

@@ -18,6 +18,7 @@ import distillateProducts from './components/distillateProducts';
 import { useState } from 'react';
 import CheckCountry from './components/checkCountry';
 import styled from 'styled-components';
+import { useEffect } from 'react';
 
 const Div = styled.div`
     overflow-x: hidden;
@@ -25,11 +26,24 @@ const Div = styled.div`
 `
 
 function App() {
-  // let [isFSVisited, setFSVisited] = useState(false); 
-  // let [isDVisited, setDVisited] = useState(false);
   let [FnoOfProduct, FsetNoOfProduct] = useState(5);
   let [DnoOfProduct, DsetNoOfProduct] = useState(5);
-  let [visited, setVisited] = useState(true);
+  let [visited, setVisited] = useState(false);
+
+
+
+  useEffect(() => {
+    let storageVisited = window.localStorage.getItem('visited');
+
+    if(storageVisited){
+      setVisited(true)
+    }
+  }, []);
+
+  let setVisitedFunction = () => {
+    window.localStorage.setItem('visited', 'true');
+    setVisited(true)
+  }
 
   return (
     <Router>
@@ -37,7 +51,7 @@ function App() {
         <Nav/>
 
         {!visited ? (
-          <CheckCountry setVisited={setVisited}/>
+          <CheckCountry setVisited={setVisitedFunction}/>
         ):(
           <AnimatePresence exitBeforeEnter>
 

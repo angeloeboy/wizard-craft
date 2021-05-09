@@ -202,13 +202,25 @@ let Nav = () => {
       <div className="nav-details">
         <div className="container">
           <div className="nav-socmed-logo">
-            <a href="#asd">
+            <a
+              href="https://web.facebook.com/wizardcart"
+              target="_blank"
+              rel="noreferrer"
+            >
               <img src={fb} alt="" />
             </a>
-            <a href="#asd">
+            <a
+              href="https://www.instagram.com/wizardcart"
+              target="_blank"
+              rel="noreferrer"
+            >
               <img src={ig} alt="" />
             </a>
-            <a href="#asd">
+            <a
+              href="mailto:wizardcartridge@gmail.com"
+              target="_blank"
+              rel="noreferrer"
+            >
               <img src={gplus} alt="" />
             </a>
             <a href="#asd">
