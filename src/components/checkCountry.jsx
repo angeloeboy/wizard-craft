@@ -113,10 +113,12 @@ let Prompt = styled.div`
 
       .atleast-21 {
         .buttons {
+          justify-content: center;
           button {
             padding: 5px 0px;
             font-size: 12px;
-            width: 90px;
+            width: 40%;
+            margin: 5px;
           }
         }
       }
