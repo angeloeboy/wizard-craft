@@ -6,7 +6,7 @@ import ScrollToTop from "./ScrollTop";
 import { motion } from "framer-motion";
 import { animation, transition } from "./animation";
 import bg from "../assets/detailsBg.png";
-
+import comingSoon from "../assets/comingSoon.png";
 const Div = styled.div`
   background-color: #120033;
   background-image: url(${bg});
@@ -248,7 +248,7 @@ let ProductDetails = (props) => {
             </div>
 
             <div className="cert-container">
-              <img src={cert} alt="" />
+              <img src={comingSoon} alt="" />
             </div>
             {/* <img src={bg} alt="" /> */}
           </div>

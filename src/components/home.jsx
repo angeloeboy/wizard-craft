@@ -15,6 +15,8 @@ import img2 from "../assets/hero-images/img2-1.png";
 import img3 from "../assets/hero-images/img3-1.png";
 import img4 from "../assets/hero-images/img4-1.png";
 import ScrollToTop from "./ScrollTop";
+import box1 from "../assets/hero-images/homepage-des.png";
+import box2 from "../assets/hero-images/homepage-des1.png";
 
 const Main = styled.div`
   background-color: #120033;
@@ -34,6 +36,21 @@ const Hero = styled.div`
     min-height: 900px;
     margin: 0 auto;
     padding: 0px 5%;
+    position: relative;
+  }
+
+  .box1 {
+    width: 40px;
+    position: absolute;
+    left: 0px;
+    top: calc(50% - 30%);
+  }
+
+  .box2 {
+    width: 170px;
+    position: absolute;
+    left: 35%;
+    bottom: 0%;
   }
 
   .text-container {
@@ -82,20 +99,33 @@ const Hero = styled.div`
 
   .hero-image {
     width: 50%;
+    float: right;
     img {
-      width: 600px;
-      margin-left: 120px;
+      width: 80%;
+      margin-left: 10%;
     }
   }
 
   @media (max-width: 900px) {
     padding: 100px 0px;
+    display: relative;
+
     background-position-x: 25%;
     .container {
       flex-direction: column-reverse;
       align-items: center;
       justify-content: center;
       min-height: initial;
+    }
+
+    .box2 {
+      right: 100px;
+      left: initial;
+      transform: rotate(90deg);
+      right: -5%;
+      bottom: initial;
+      bottom: 0;
+      width: 100px;
     }
 
     .text-container {
@@ -113,6 +143,11 @@ const Hero = styled.div`
   @media (max-width: 600px) {
     .container {
       /* min-height: 100vh; */
+    }
+
+    .box1 {
+      width: 20px;
+      top: 10%;
     }
 
     .text-container {
@@ -451,6 +486,9 @@ let Home = () => {
       <Main>
         <Hero>
           <div className="container">
+            <img src={box1} alt="" className="box1" />
+            <img src={box2} alt="" className="box2" />
+
             <div className="text-container">
               <h1>Welcome to</h1>
               <h1>Wizard Cart</h1>

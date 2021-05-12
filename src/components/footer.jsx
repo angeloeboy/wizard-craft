@@ -116,7 +116,7 @@ export let Footer = () => {
         <div className="footer-navigation">
           <h1>Navigation</h1>
           <div className="links">
-            <a href="#home">
+            <a href="/">
               <p>Home</p>
             </a>
             <a href="#products">
