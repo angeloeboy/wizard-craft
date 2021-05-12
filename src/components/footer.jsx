@@ -6,6 +6,7 @@ import gplus from "../assets/logos/google-plus.svg";
 import linkedin from "../assets/logos/linkedin.svg";
 import whatsapp from "../assets/logos/whatsapp.svg";
 import logo from "../assets/logo.png";
+import { HashLink as Link } from "react-router-hash-link";
 
 const Foot = styled.footer`
   background-color: #1d0055;
@@ -125,9 +126,9 @@ export let Footer = () => {
             <a href="#Highlights">
               <p>Highlights</p>
             </a>
-            <a href="/About">
+            <Link to="/About">
               <p>About</p>
-            </a>
+            </Link>
           </div>
         </div>
 
