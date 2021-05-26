@@ -2,42 +2,9 @@ import productIcons from "../assets/product-icons/index"
 import productLogo from '../assets/product-logo/index';
 
 const fullSpectrumProducts =  [
-    {
-      name: "Jack Herer",
-      description: "Sativa",
-      ImgLink1: productIcons.happy,
-      ImgLink2: productIcons.uplifting,
-      ImgLink3: productIcons.euphoric,
-      ProductLogo: productLogo.jackHererSativa,
-      feeling1: "Happy", 
-      feeling2:  "Uplifted",
-      feeling3:  "Euphoric",
-      details: "Jack Herer is a sativa-dominant cannabis strain that has gained as much renown as its namesake, the marijuana activist and author of The Emperor Wears No Clothes. Combining a Haze hybrid with a Northern Lights #5 and Shiva Skunk cross, Sensi Seeds created Jack Herer hoping to capture both cerebral elevation and heavy resin production. Its rich genetic background gives rise to several different variations of Jack Herer, each phenotype bearing its own unique features and effects. However, consumers typically describe this 55% sativa hybrid as blissful, clear-headed, and creative."
-    },
-    {
-      name: "Zkittles",
-      description: "Indica",
-      ImgLink1: productIcons.relaxed,
-      ImgLink2: productIcons.happy,
-      ImgLink3: productIcons.euphoric,
-      ProductLogo: productLogo.zkittlesIndica,
-      feeling1: "Relaxed", 
-      feeling2:  "Happy",
-      feeling3:  "Euphoric",
-      details: "Zkittlez is believed to be an indica-dominant marijuana strain bred from a mix of Grape Ape and Grapefruit that is crossed with another undisclosed strain to produce this candy-flavored strain bred by 3rd Gen Family and Terp Hogz. This award-winning combination took 1st Place at the 2016 Emerald Cup and 1st Place Indica at the 2015 Cannabis Cups in San Francisco and in Michigan. The chunky colas explode in a spectrum of light green hues and emit a sweet, tropical blend of fruit flavors. The effects of Zkittlez are calming, leaving consumers focused, alert, and happy while relaxing the body to help unwind any time of day."
-    },
-    {
-      name: "Gushers",
-      description: "Hybrid",
-      ImgLink1: productIcons.relaxed,
-      ImgLink2: productIcons.happy,
-      ImgLink3: productIcons.euphoric,
-      ProductLogo: productLogo.gushers,
-      feeling1: "Relaxed", 
-      feeling2:  "Happy",
-      feeling3:  "Euphoric",
-      details: "Gushers is a hybrid marijuana strain and a member of the Cookies family with Gelato #41 and Triangle Kush parents. People who like it are also going to like Runtz and Zkittlez. Gushers is a high-THC, low-CBD cultivar, and has strong, euphoric effects that can initially feel enervating, then sedating. Named for its explosively thick fruit flavor, it's available as flower or extract. Growers of all skill levels and grow it indoors, outdoors, and in greenhouses. Gushers came from a group of growers affiliated with the Cookie Fam on the West Coast in the '10s, but it can be found worldwide. People consume Gushers for pleasure, wellness, and medical symptom management including pain, nausea, and insomnia."
-    },
+    
+    
+    
     {
       name: "Grape Ape",
       description: "Indica",
