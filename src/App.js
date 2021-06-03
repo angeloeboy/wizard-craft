@@ -19,6 +19,13 @@ import { useState } from 'react';
 import CheckCountry from './components/checkCountry';
 import styled from 'styled-components';
 import { useEffect } from 'react';
+import { createBrowserHistory } from 'history';
+
+
+import ReactGA from 'react-ga';
+ReactGA.initialize('G-5T1TVLGFZW');
+ReactGA.pageview(window.location.pathname + window.location.search);
+
 
 const Div = styled.div`
     overflow-x: hidden;
@@ -39,6 +46,21 @@ function App() {
       setVisited(true)
     }
   }, []);
+
+
+  useEffect(() => {
+    ReactGA.initialize('UA-198576130-1');
+    ReactGA.pageview(window.location.pathname);
+  })
+
+  const history = createBrowserHistory();
+
+  // Initialize google analytics page view tracking
+  history.listen(location => {
+    ReactGA.initialize('UA-198576130-1');
+    ReactGA.set({ page: location.pathname }); // Update the user's current page
+    ReactGA.pageview(location.pathname); // Record a pageview for the given page
+  });
 
   let setVisitedFunction = () => {
     window.localStorage.setItem('visited', 'true');
