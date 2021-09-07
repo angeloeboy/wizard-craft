@@ -46,7 +46,7 @@ function App() {
 
 
   useEffect(() => {
-    ReactGA.initialize('UA-206850972-1');
+    ReactGA.initialize('UA-198576130-1');
     ReactGA.pageview(window.location.pathname);
   }, [])
 
