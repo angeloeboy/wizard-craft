@@ -6,14 +6,14 @@ import { animation, transition } from "./animation";
 import ScrollToTop from "./ScrollTop";
 
 const Div = styled.div`
-  background-color: #130030;
+  /* background-color: #130030; */
   padding-bottom: 100px;
-  background: rgb(18, 0, 51);
+  /* background: rgb(18, 0, 51);
   background: linear-gradient(
     0deg,
     rgba(18, 0, 51, 1) 10%,
     rgba(38, 9, 94, 1) 100%
-  );
+  ); */
   overflow-x: hidden;
 
   .title {
@@ -102,8 +102,6 @@ let Distillate = (props) => {
       <ScrollToTop />
       <Div>
         <div className="title">
-          <h1 className="distillate-title-bg">Distillate</h1>
-
           <h1 className="distillate-title">Distillate</h1>
         </div>
 

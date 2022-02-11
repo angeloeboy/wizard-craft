@@ -9,17 +9,19 @@ import logo from "../assets/logo.png";
 import { HashLink as Link } from "react-router-hash-link";
 
 const Foot = styled.footer`
-  background-color: #1d0055;
+  background-color: #3b118b;
   width: 100%;
   overflow-x: hidden;
   box-sizing: border-box;
 
   .container {
-    padding: 70px 15%;
+    padding: 70px 10%;
     max-width: 1500px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    /* display: grid;
+    grid-template-columns: repeat(7, 1fr); */
+    display: flex;
+    justify-content: space-between;
     font-weight: 300;
 
     h1 {
@@ -31,6 +33,7 @@ const Foot = styled.footer`
     .logo-texts {
       color: white;
       grid-column: 1/3;
+      max-width: 300px;
       .logo {
         width: 150px;
       }

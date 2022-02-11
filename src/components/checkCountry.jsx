@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import icon from "../assets/dropDownIcon.png";
+import bg from "../assets/background-intro.png";
+
 let Prompt = styled.div`
   background-color: #120033;
   width: 100vw;
@@ -11,7 +13,9 @@ let Prompt = styled.div`
   position: relative;
   overflow-x: hidden;
   box-sizing: border-box;
-
+  background-image: url(${bg});
+  background-size: cover;
+  background-position: center;
   .inner {
     background-color: #1d0054;
     position: absolute;

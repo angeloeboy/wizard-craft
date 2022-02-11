@@ -6,17 +6,19 @@ import { animation, transition } from "./animation";
 
 //Images
 import HeroImg from "../assets/hero-images/hero-bg-image-1.png";
-import LogoHomePage from "../assets/hero-images/logo192.png";
-import fullSpectrumImg from "../assets/hero-images/fullSpectrum-1.png";
-import distillateImg from "../assets/hero-images/distillate-1.png";
-import bigImg from "../assets/hero-images/highlightsBig-1.png";
-import img1 from "../assets/hero-images/img1-1.png";
-import img2 from "../assets/hero-images/img2-1.png";
-import img3 from "../assets/hero-images/img3-1.png";
-import img4 from "../assets/hero-images/img4-1.png";
+import LogoHomePage from "../assets/hero-images/hero-image-logo.png";
+
+import d8 from "../assets/hero-images/D8.png";
+import sauce from "../assets/hero-images/SAUCE.png";
+
+import bigImg from "../assets/hero-images/first.png";
+import second from "../assets/hero-images/second.png";
+import third from "../assets/hero-images/third.png";
+import fourth from "../assets/hero-images/fourth.png";
 import ScrollToTop from "./ScrollTop";
 import box1 from "../assets/hero-images/homepage-des.png";
 import box2 from "../assets/hero-images/homepage-des1.png";
+import distillateProducts from "./distillateProducts";
 
 const Main = styled.div`
   background-color: #120033;
@@ -32,33 +34,23 @@ const Hero = styled.div`
     max-width: 1500px;
     display: flex;
     align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
     min-height: 900px;
     margin: 0 auto;
     padding: 0px 5%;
-    position: relative;
-  }
-
-  .box1 {
-    width: 40px;
-    position: absolute;
-    left: 0px;
-    top: calc(50% - 30%);
-  }
-
-  .box2 {
-    width: 170px;
-    position: absolute;
-    left: 35%;
-    bottom: 0%;
   }
 
   .text-container {
-    width: 50%;
+    width: 40%;
     margin-top: 20px;
+    align-self: center;
+
     h1 {
       color: white;
       font-size: 20px;
+      text-transform: uppercase;
+      font-weight: 800;
     }
     h1:nth-child(1) {
       font-weight: 400;
@@ -66,7 +58,7 @@ const Hero = styled.div`
     }
 
     h1:nth-child(2) {
-      color: #d5931c;
+      color: #ff9f0b;
       font-size: 70px;
       margin-top: -20px;
     }
@@ -80,28 +72,30 @@ const Hero = styled.div`
     }
 
     p {
-      color: white;
-      opacity: 0.7;
+      color: #d1cddd;
       font-weight: 300;
-      font-size: 18px;
+      font-size: 16px;
     }
 
     button {
       margin-top: 60px;
-      padding: 10px 45px;
+      padding: 20px 45px;
       border: none;
       background-color: #d5931c;
       color: white;
-      font-size: 20px;
+      font-size: 18px;
       cursor: pointer;
+      color: #3b118b;
+      font-weight: bold;
+      background-image: linear-gradient(140deg, #ffb726, #e98800);
     }
   }
 
   .hero-image {
-    width: 50%;
-    float: right;
+    width: 60%;
+    margin-bottom: 0px;
     img {
-      width: 80%;
+      width: 100%;
       margin-left: 10%;
     }
   }
@@ -187,7 +181,7 @@ const Hero = styled.div`
 const Products = styled.div`
   text-align: center;
   box-sizing: border-box;
-  background-color: #120033;
+  background-color: white;
   padding: 100px;
   min-height: 900px;
   overflow-x: hidden;
@@ -198,79 +192,28 @@ const Products = styled.div`
   }
 
   h1 {
-    color: #d5931c;
+    color: #3c118c;
     font-size: 2.5rem;
   }
 
   p {
     font-weight: 500;
-    color: white;
-    font-size: 1.2rem;
+    color: #3c118c;
+    font-size: 1rem;
   }
 
   .product-choice {
-    position: relative;
-    top: -200px;
-
+    display: flex;
+    margin-top: 100px;
     img {
-      width: 800px;
-      /* background-color: pink; */
-    }
-
-    div {
-      display: flex;
-      align-items: center;
-      flex-flow: column;
-      width: 65%;
-      position: absolute;
-      /* background-color: pink; */
-    }
-
-    div:nth-child(2) {
-      right: 0;
-    }
-
-    .link {
-      position: absolute;
-      bottom: 15%;
-      z-index: 2;
-    }
-
-    .full {
-      transform: translateY(2px);
-    }
-  }
-
-  @media (max-width: 1092px) {
-    .product-choice {
-      img {
-        width: 800px;
-      }
-      div:nth-child(1) {
-        left: -10%;
-      }
-      div:nth-child(2) {
-        right: -10%;
-      }
-    }
-  }
-
-  @media (max-width: 900px) {
-    .product-choice {
-      img {
-        width: 800px;
-      }
-      div:nth-child(1) {
-        left: -10%;
-      }
-      div:nth-child(2) {
-        right: -10%;
-      }
+      width: 100%;
     }
   }
 
   @media (max-width: 700px) {
-    overflow-y: hidden;
+    .product-choice {
+      flex-flow: column;
+    }
   }
 
   @media (max-width: 600px) {
@@ -279,18 +222,6 @@ const Products = styled.div`
       font-size: 1rem;
       width: 100%;
     }
-    .product-choice {
-      top: -100px;
-      img {
-        width: 700px;
-      }
-      div:nth-child(1) {
-        left: -10vw;
-      }
-      div:nth-child(2) {
-        right: -10vw;
-      }
-    }
   }
 
   @media (max-width: 450px) {
@@ -298,9 +229,6 @@ const Products = styled.div`
     .product-choice {
       top: 0px;
 
-      img {
-        width: 400px;
-      }
       div:nth-child(1) {
         /* left: -35%; */
         left: -5vw;
@@ -370,23 +298,24 @@ const Button = styled.button`
 
 const Highlights = styled.div`
   /* height: 100vh; */
-  background-color: #0f0028;
+  background-color: #f9f5f4;
   padding-bottom: 50px;
 
   .container {
     max-width: 1500px;
     margin: 0 auto;
+    padding: 0px 10%;
   }
   .text {
-    width: 50%;
     padding: 50px;
+    text-align: center;
     h1 {
-      color: #d5931c;
+      color: #3c118c;
       font-size: 2.5rem;
     }
 
     p {
-      color: white;
+      color: #3c118c;
     }
   }
 
@@ -403,20 +332,19 @@ const Highlights = styled.div`
     div:nth-child(1) {
       grid-column: 1/3;
       grid-row: 1/3;
-      background-color: #080114;
     }
 
     div:nth-child(2) {
-      grid-column: 3/4;
+      grid-column: 3/5;
       grid-row: 1/2;
     }
     div:nth-child(3) {
-      grid-column: 4/5;
-      grid-row: 1/2;
+      grid-column: 3/4;
+      grid-row: 2/3;
     }
 
     div:nth-child(4) {
-      grid-column: 3/4;
+      grid-column: 4/5;
       grid-row: 2/3;
     }
 
@@ -442,12 +370,12 @@ const Highlights = styled.div`
         grid-row: 1/3;
       }
       div:nth-child(2) {
-        grid-column: 1/3;
+        grid-column: 1/5;
         grid-row: 3/4;
       }
       div:nth-child(3) {
         grid-column: 3/5;
-        grid-row: 3/4;
+        grid-row: 4/5;
       }
 
       div:nth-child(4) {
@@ -482,13 +410,9 @@ let Home = () => {
       variants={animation}
       transition={transition}
     >
-      {/* <ScrollToTop /> */}
       <Main>
         <Hero>
           <div className="container">
-            <img src={box1} alt="" className="box1" />
-            <img src={box2} alt="" className="box2" />
-
             <div className="text-container">
               <h1>Welcome to</h1>
               <h1>Wizard Cart</h1>
@@ -511,20 +435,18 @@ let Home = () => {
 
         <Products id="products">
           <div className="container">
-            <h1>Products</h1>
+            <h1>PRODUCTS</h1>
             <p>Find out the details of our products below.</p>
 
             <div className="product-choice">
               <div>
-                <img src={distillateImg} alt="distillate" />
                 <Link to="/Distillate" className="link">
-                  <Button button="distillate">Distillate</Button>
+                  <img src={d8} alt="distillate" />
                 </Link>
               </div>
               <div>
-                <img src={fullSpectrumImg} alt="" />
                 <Link to="/Full-Spectrum" className="link full">
-                  <Button button="full-spectrum">Full Spectrum</Button>
+                  <img src={sauce} alt="" />
                 </Link>
               </div>
             </div>
@@ -534,7 +456,8 @@ let Home = () => {
         <Highlights id="Highlights">
           <div className="container">
             <div className="text">
-              <h1>Highlights</h1>
+              <h1>HIGHLIGHTS</h1>
+              <p>Get thrilled with our new packaging design</p>
             </div>
 
             <div className="highlights-img">
@@ -542,16 +465,13 @@ let Home = () => {
                 <img src={bigImg} alt="bigimage" />
               </div>
               <div>
-                <img src={img1} alt="bigimage" />
+                <img src={second} alt="bigimage" />
               </div>
               <div>
-                <img src={img2} alt="bigimage" />
+                <img src={third} alt="bigimage" />
               </div>
               <div>
-                <img src={img3} alt="bigimage" />
-              </div>
-              <div>
-                <img src={img4} alt="bigimage" />
+                <img src={fourth} alt="bigimage" />
               </div>
             </div>
           </div>

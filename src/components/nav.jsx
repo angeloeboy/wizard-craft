@@ -10,6 +10,7 @@ import whatsapp from "../assets/logos/whatsapp.svg";
 import arrow from "../assets/logos/arrowLeft.png";
 import { HashLink as Link } from "react-router-hash-link";
 
+import { useLocation } from "react-router-dom";
 const Navigation = styled.nav`
   /* position: fixed; */
   width: 100vw;
@@ -25,9 +26,6 @@ const Navigation = styled.nav`
   }
 
   .nav-details {
-    /* display: flex;
-    align-items: center;
-    justify-content: space-between; */
     background-color: #d5931c;
     padding: 0px 5%;
 
@@ -58,13 +56,12 @@ const Navigation = styled.nav`
   }
 
   .primary-nav {
-    /* display: flex;
-    align-items: center; */
     padding: 30px 5%;
-    /* justify-content: space-between; */
     transition: all 0.3s ease-in-out;
     background-color: ${(props) =>
-      props.position === "top" ? "transparent" : "#2a0c5d"};
+      props.position === "top" && props.location === "/"
+        ? "transparent"
+        : "#3b118b"};
 
     .nav-logo {
       background-color: green;
@@ -185,6 +182,8 @@ const Navigation = styled.nav`
 let Nav = () => {
   const [pos, setPos] = useState("top");
   const [isNavHidden, setNavVisibility] = useState(true);
+  const location = useLocation();
+
   useEffect(() => {
     document.addEventListener("scroll", (e) => {
       let scrolled = document.scrollingElement.scrollTop;
@@ -198,7 +197,11 @@ let Nav = () => {
   }, [pos]);
 
   return (
-    <Navigation position={pos} isHidden={isNavHidden}>
+    <Navigation
+      position={pos}
+      isHidden={isNavHidden}
+      location={location.pathname}
+    >
       <div className="nav-details">
         <div className="container">
           <div className="nav-socmed-logo">

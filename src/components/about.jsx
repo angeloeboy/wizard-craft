@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import bg from "../assets/aboutBg.png";
+import bg from "../assets/about-bg.png";
+import aboutImg from "../assets/about-img.png";
 import { motion } from "framer-motion";
 import { animation, transition } from "./animation";
 import ScrollToTop from "./ScrollTop";
@@ -12,21 +13,22 @@ const Div = styled.div`
   padding: 20px 5%;
   background-position: center;
   box-sizing: border-box;
-
   .container {
     max-width: 1550px;
     margin: 0 auto;
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-between;
+    padding-top: 200px;
   }
   .text {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
     width: 40%;
     h1 {
       font-size: 4rem;
       color: white;
+      text-transform: uppercase;
       span {
-        color: #d5931c;
+        color: #3b118b;
       }
     }
 
@@ -39,15 +41,33 @@ const Div = styled.div`
     }
 
     p {
-      color: #ceccd5;
+      color: #875171;
+      margin-top: 10px;
+    }
+  }
+
+  .img-container {
+    width: 50%;
+
+    img {
+      width: 100%;
     }
   }
 
   @media (max-width: 1090px) {
     background-position: right;
-
+    .container {
+      flex-flow: column;
+      align-items: center;
+    }
     .text {
       width: 90%;
+      margin-bottom: 60px;
+    }
+
+    .img-container {
+      width: 80%;
+      transform: translateX(10%);
     }
   }
 
@@ -81,7 +101,6 @@ let About = () => {
             <h1>
               <span>About </span>Us
             </h1>
-            <div className="line"></div>
             <p>
               Wizard carts are focused on quality. We want our consumers to
               enjoy the highest quality vape that is possible. You can trust
@@ -98,6 +117,10 @@ let About = () => {
               sends our condolences to families dealing with vaping related
               illnesses.
             </p>
+          </div>
+
+          <div className="img-container">
+            <img src={aboutImg} alt="" />
           </div>
         </div>
       </Div>

@@ -15,6 +15,8 @@ import { AnimatePresence } from "framer-motion"
 
 import fullSpectrumProducts from './components/fullSpectrumProducts';
 import distillateProducts from './components/distillateProducts';
+import d8Products from './components/d8Products';
+
 import { useState } from 'react';
 import CheckCountry from './components/checkCountry';
 import styled from 'styled-components';
@@ -23,6 +25,7 @@ import { createBrowserHistory } from 'history';
 
 
 import ReactGA from 'react-ga';
+import D8 from './components/d8';
 
 const Div = styled.div`
     overflow-x: hidden;
@@ -32,6 +35,7 @@ const Div = styled.div`
 function App() {
   let [FnoOfProduct, FsetNoOfProduct] = useState(5);
   let [DnoOfProduct, DsetNoOfProduct] = useState(5);
+
   let [visited, setVisited] = useState(false);
 
 
@@ -58,21 +62,23 @@ function App() {
   return (
     <Router>
       <Div className="App">
-        <Nav/>
+       
 
         {!visited ? (
           <CheckCountry setVisited={setVisitedFunction}/>
         ):(
           <AnimatePresence exitBeforeEnter>
-
+          <Nav />
           <Switch>
             <Route path="/" exact component={Home}/>
             <Route path="/Distillate" exact render={(props) => <Distillate products={distillateProducts} noOfProduct={DnoOfProduct} setNoOfProduct={DsetNoOfProduct}/> }/>
-            <Route path="/Full-Spectrum" exact render={(props) => <FullSpectrum products={fullSpectrumProducts} noOfProduct={FnoOfProduct} setNoOfProduct={FsetNoOfProduct}/> }/>
-            <Route path="/About" exact component={About}/>
-         
 
-              
+            <Route path="/D8" exact render={(props) => <D8 products={d8Products} noOfProduct={DnoOfProduct} setNoOfProduct={DsetNoOfProduct}/> }/>
+
+            <Route path="/Full-Spectrum" exact render={(props) => <FullSpectrum products={fullSpectrumProducts} noOfProduct={FnoOfProduct} setNoOfProduct={FsetNoOfProduct}/> }/>
+            
+            <Route path="/About" exact component={About}/>
+          
 
             {/* Rendering all Distillate Products */}
 
@@ -93,12 +99,20 @@ function App() {
             ))}
             
 
+            {d8Products.map(product => (
+              <Route
+              path={`/d8/${product.name}`}
+              render={(props) => <ProductDetails products={product} />}
+            />
+            ))}
+
           </Switch>
+        <Footer/>
+
         </AnimatePresence>
         )}
 
        
-        <Footer/>
           
       </Div>
     </Router>

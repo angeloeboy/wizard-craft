@@ -1,8 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800&display=swap");
 
 * {
   font-family: "Poppins", sans-serif;
   margin: 0px;
+  box-sizing: border-box;
 }
 
 .product-container {
@@ -23,6 +24,21 @@ html {
 
 :root {
   scroll-padding-top: 126px;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #ffa302;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #360f7f;
 }
 
 /* html,
