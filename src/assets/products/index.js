@@ -5,7 +5,7 @@ const products = {
     bluberryOg: require("./BLUEBERRY OG1.png").default,
     caliOg: require("./CALI OG1.png").default,
     candyCane: require("./CANDY CANE1.png").default,
-    gg41: require("./GG#41.png").default,
+    gg41: require("./GG41.png").default,
     greenCrack: require("./GREEN CRACK1.png").default,
     gusherz: require("./GUSHERZ1.png").default,
     indicaBlend: require("./INDICA BLEND1.png").default,
