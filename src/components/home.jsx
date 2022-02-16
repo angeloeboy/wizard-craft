@@ -103,7 +103,6 @@ const Hero = styled.div`
   @media (max-width: 900px) {
     padding: 100px 0px;
     display: relative;
-
     background-position-x: 25%;
     .container {
       flex-direction: column-reverse;
@@ -126,10 +125,16 @@ const Hero = styled.div`
       width: 100%;
     }
     .hero-image {
-      width: 70%;
+      width: 100%;
+
+      margin-top: 100px;
+
       img {
-        width: 100%;
+        width: 90%;
         margin: 0px;
+        margin: 0 auto;
+        display: block;
+        transform: translateX(10%);
       }
     }
   }
@@ -440,12 +445,12 @@ let Home = () => {
 
             <div className="product-choice">
               <div>
-                <Link to="/Distillate" className="link">
+                <Link to="/d8" className="link">
                   <img src={d8} alt="distillate" />
                 </Link>
               </div>
               <div>
-                <Link to="/Full-Spectrum" className="link full">
+                <Link to="/Sauce-Concentrate" className="link full">
                   <img src={sauce} alt="" />
                 </Link>
               </div>

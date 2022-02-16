@@ -26,6 +26,7 @@ import { createBrowserHistory } from 'history';
 
 import ReactGA from 'react-ga';
 import D8 from './components/d8';
+import SauceConcentrate from './components/sauceConcentrate';
 
 const Div = styled.div`
     overflow-x: hidden;
@@ -75,6 +76,8 @@ function App() {
 
             <Route path="/D8" exact render={(props) => <D8 products={d8Products} noOfProduct={DnoOfProduct} setNoOfProduct={DsetNoOfProduct}/> }/>
 
+            <Route path="/Sauce-Concentrate" exact render={(props) => <SauceConcentrate products={d8Products} noOfProduct={DnoOfProduct} setNoOfProduct={DsetNoOfProduct}/> }/>
+
             <Route path="/Full-Spectrum" exact render={(props) => <FullSpectrum products={fullSpectrumProducts} noOfProduct={FnoOfProduct} setNoOfProduct={FsetNoOfProduct}/> }/>
             
             <Route path="/About" exact component={About}/>
@@ -102,6 +105,14 @@ function App() {
             {d8Products.map(product => (
               <Route
               path={`/d8/${product.name}`}
+              render={(props) => <ProductDetails products={product} />}
+            />
+            ))}
+
+
+            {d8Products.map(product => (
+              <Route
+              path={`/Sauce-Concentrate/${product.name}`}
               render={(props) => <ProductDetails products={product} />}
             />
             ))}

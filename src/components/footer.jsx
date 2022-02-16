@@ -7,6 +7,7 @@ import linkedin from "../assets/logos/linkedin.svg";
 import whatsapp from "../assets/logos/whatsapp.svg";
 import logo from "../assets/logo.png";
 import { HashLink as Link } from "react-router-hash-link";
+import distillateProducts from "./distillateProducts";
 
 const Foot = styled.footer`
   background-color: #3b118b;
@@ -18,8 +19,7 @@ const Foot = styled.footer`
     padding: 70px 10%;
     max-width: 1500px;
     margin: 0 auto;
-    /* display: grid;
-    grid-template-columns: repeat(7, 1fr); */
+
     display: flex;
     justify-content: space-between;
     font-weight: 300;
@@ -77,25 +77,26 @@ const Foot = styled.footer`
     }
 
     @media (max-width: 830px) {
-      grid-template-rows: 3fr 1fr 3fr;
       padding: 70px 5%;
+      flex-direction: column;
+      display: block;
       .logo-texts {
-        grid-column: 1/8;
-        grid-row: 1/1;
+        max-width: initial;
+        margin-bottom: 20px;
       }
-
       .footer-navigation {
-        grid-column: 1/6;
-        grid-row: 3/4;
+        display: inline-block;
+        width: 30%;
+        font-size: 0.8rem;
       }
-
       .contacts {
-        grid-column: 4/7;
-        grid-row: 3/4;
+        display: inline-block;
+        width: 50%;
+        float: right;
       }
     }
 
-    @media (max-width: 400px) {
+    @media (max-width: 500px) {
       .logo-texts {
         p {
           font-size: 0.8rem;

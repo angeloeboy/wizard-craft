@@ -75,13 +75,12 @@ const Div = styled.div`
     }
   }
 `;
-
-let D8 = (props) => {
+let SauceConcentrate = (props) => {
   let product = [];
 
   for (let i = 0; i < props.noOfProduct; i++) {
     let item = props.products[i];
-    product.push(<Product products={item} link="d8" />);
+    product.push(<Product products={item} link="Sauce-Concentrate" />);
   }
 
   return (
@@ -95,7 +94,7 @@ let D8 = (props) => {
       <ScrollToTop />
       <Div>
         <div className="title">
-          <h1 className="distillate-title">D8</h1>
+          <h1 className="distillate-title">Sauce Concentrate</h1>
         </div>
 
         <div className="product-container">{product}</div>
@@ -119,4 +118,4 @@ let D8 = (props) => {
   );
 };
 
-export default D8;
+export default SauceConcentrate;

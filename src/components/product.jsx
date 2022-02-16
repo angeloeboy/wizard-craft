@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import bg from "../assets/bg-stripe.png";
+import bgyellow from "../assets/bg-yellow.png";
 
 // import IMAGES from "../assets/product-icons/index";
 
@@ -12,7 +13,7 @@ const Div = styled.div`
   width: 23%;
   margin: 6px 0px;
   transition: all 0.3s ease;
-  background-color: #3b118b;
+  background-color: ${(props) => (props.path == "/d8" ? "#3b118b" : "#ffa302")};
   margin: 5px;
   a {
     text-decoration: none;
@@ -29,12 +30,13 @@ const Div = styled.div`
     .img-container {
       width: 100%;
       text-align: center;
-      background-image: url(${bg});
-      padding: 30px;
+      background-image: ${(props) =>
+        props.path == "/d8" ? `url(${bg})` : `url(${bgyellow})`};
+      padding: 20px 0px;
       background-size: cover;
       img {
-        max-width: 100%;
-        /* max-height: 40px; */
+        width: 100%;
+        max-width: 400px;
       }
     }
 
@@ -119,8 +121,14 @@ const Div = styled.div`
 `;
 
 let Product = (props) => {
+  const [path, setPath] = useState("");
+
+  useEffect(() => {
+    setPath(window.location.pathname);
+  }, []);
+
   return (
-    <Div>
+    <Div path={path}>
       <Link to={`/${props.link}/${props.products.name}`}>
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
           <div className="inner-product">

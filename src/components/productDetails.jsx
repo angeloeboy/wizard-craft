@@ -1,40 +1,70 @@
 import React from "react";
 import styled from "styled-components";
-import cert from "../assets/certs/psi.png";
 import { useHistory } from "react-router-dom";
 import ScrollToTop from "./ScrollTop";
 import { motion } from "framer-motion";
 import { animation, transition } from "./animation";
-import bg from "../assets/detailsBg.png";
 import comingSoon from "../assets/comingSoon.png";
+import bg from "../assets/bg-stripe.png";
+
 const Div = styled.div`
-  background-color: #120033;
-  background-image: url(${bg});
   background-position: center;
   background-size: cover;
   overflow-x: hidden;
-
   .container {
     max-width: 1500px;
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    /* align-items: center; */
     margin: 0 auto;
   }
 
   .product-description-container {
     padding: 15% 5%;
-    /* display: flex;
-    justify-content: space-around;
-    align-items: center; */
-    color: white;
+    color: #3b118b !important;
 
     .texts-container {
       width: 50%;
 
+      .product-img-info {
+        display: flex;
+        align-items: flex-start;
+
+        .product-img {
+          max-height: 200px;
+          background-image: url(${bg});
+          background-position: center;
+          background-size: cover;
+          padding: 20px 60px;
+          border-radius: 20px;
+        }
+
+        .product-infos {
+          margin-left: 30px;
+
+          .feeling {
+            .feeling-container {
+              display: flex;
+              margin-right: 30px;
+              margin: 10px 0px;
+              .icon {
+                width: 20px;
+                margin-right: 10px;
+                position: relative;
+                img {
+                  width: 100%;
+                  position: absolute;
+                  top: 50%;
+                  transform: translateY(-50%);
+                }
+              }
+            }
+          }
+        }
+      }
+
       h1 {
         font-size: 25px;
-        margin-top: 50px;
       }
 
       ul {
@@ -48,46 +78,42 @@ const Div = styled.div`
       }
 
       p {
-        margin: 10px 0px;
-
         span {
           text-transform: uppercase;
           font-weight: 700;
         }
       }
 
+      .product-type {
+        margin-top: 30px;
+      }
+      .details-title {
+        margin-top: 20px;
+        font-size: 20px;
+      }
       .details {
-        font-weight: 300;
+        font-weight: 400;
+        margin-top: 10px;
       }
 
       button {
         text-transform: uppercase;
         background-color: #d5931c;
         border: 0px;
-        padding: 10px 50px;
+        padding: 20px 70px;
         font-size: 20px;
         font-weight: 800;
         margin-top: 70px;
-      }
-
-      .feeling {
-        .feeling-container {
-          display: inline-flex;
-          margin-right: 30px;
-          .icon {
-            width: 20px;
-            margin-right: 10px;
-            position: relative;
-            img {
-              width: 100%;
-              position: absolute;
-              top: 50%;
-              transform: translateY(-50%);
-            }
-          }
-        }
+        border: none;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        color: #3b118b;
+        font-weight: bold;
+        background-image: linear-gradient(140deg, #ffb726, #e98800);
       }
     }
+
     .cert-container {
       width: 40%;
       max-width: 500px;
@@ -95,26 +121,19 @@ const Div = styled.div`
         width: 90%;
       }
     }
-    .product-img {
-      /* width: 60%; */
-      max-height: 80px;
-    }
   }
 
   @media (max-width: 1000px) {
     padding-bottom: 100px;
     background-position: 30%;
-
     .container {
       flex-flow: column;
       position: relative;
     }
     .product-description-container {
-      /* flex-flow: column;
-      position: relative; */
-
       .texts-container {
         width: 90%;
+        margin-top: 100px;
       }
       .cert-container {
         width: 80%;
@@ -146,10 +165,7 @@ const Div = styled.div`
       }
 
       .product-img {
-        /* width: 90%; */
-        display: block;
-        margin: 0 auto;
-        margin-top: 170px;
+        width: 50%;
       }
     }
   }
@@ -161,7 +177,33 @@ const Div = styled.div`
       .texts-container {
         width: 95%;
 
+        .product-img-info {
+          .product-img {
+            padding: 20px 0px;
+          }
+
+          .product-infos {
+            margin-left: 10px;
+
+            .feeling {
+              .feeling-container {
+                .icon {
+                  width: 15px;
+                }
+              }
+            }
+          }
+        }
         .details {
+          font-size: 12px;
+        }
+
+        h1 {
+          font-size: 18px;
+        }
+
+        .product-type {
+          margin-top: 20px;
           font-size: 12px;
         }
       }
@@ -175,10 +217,6 @@ const Div = styled.div`
 
       button {
         font-size: 12px;
-      }
-
-      .product-img {
-        width: 90%;
       }
     }
   }
@@ -203,41 +241,42 @@ let ProductDetails = (props) => {
         <div className="product-description-container">
           <div className="container">
             <div className="texts-container">
-              <img
-                src={props.products.ProductLogo}
-                alt=""
-                className="product-img"
-              />
+              <div className="product-img-info">
+                <img
+                  src={props.products.ProductLogo}
+                  alt=""
+                  className="product-img"
+                />
 
-              <h1>{props.products.name}</h1>
-              <div className="feeling">
-                <div className="feeling-container">
-                  <div className="icon">
-                    <img src={props.products.ImgLink1} alt="" />
+                <div className="product-infos">
+                  <h1>{props.products.name}</h1>
+                  <div className="feeling">
+                    <div className="feeling-container">
+                      <div className="icon">
+                        <img src={props.products.ImgLink1} alt="" />
+                      </div>
+                      <p>{props.products.feeling1}</p>
+                    </div>
+                    <div className="feeling-container">
+                      <div className="icon">
+                        <img src={props.products.ImgLink2} alt="" />
+                      </div>
+                      <p>{props.products.feeling2}</p>
+                    </div>
+                    <div className="feeling-container">
+                      <div className="icon">
+                        <img src={props.products.ImgLink3} alt="" />
+                      </div>
+                      <p>{props.products.feeling3}</p>
+                    </div>
                   </div>
-                  <p>{props.products.feeling1}</p>
-                </div>
-                <div className="feeling-container">
-                  <div className="icon">
-                    <img src={props.products.ImgLink2} alt="" />
-                  </div>
-                  <p>{props.products.feeling2}</p>
-                </div>
-                <div className="feeling-container">
-                  <div className="icon">
-                    <img src={props.products.ImgLink3} alt="" />
-                  </div>
-                  <p>{props.products.feeling3}</p>
+
+                  <p className="product-type">
+                    <span>TYPE: </span> {props.products.description}
+                  </p>
                 </div>
               </div>
-              <ul>
-                {/* {props.products.feelings.map((feeling) => {
-                return <li>{feeling}</li>;
-              })} */}
-              </ul>
-              <p>
-                <span>TYPE: </span> {props.products.description}
-              </p>
+
               <p className="details-title">
                 {" "}
                 <span>STRAIN DETAILS</span>{" "}
