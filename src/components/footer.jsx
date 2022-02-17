@@ -16,14 +16,12 @@ const Foot = styled.footer`
   box-sizing: border-box;
 
   .container {
-    padding: 70px 10%;
+    padding: 70px 5%;
     max-width: 1500px;
     margin: 0 auto;
-
     display: flex;
     justify-content: space-between;
     font-weight: 300;
-
     h1 {
       color: #ffa302;
       font-size: 1rem;
@@ -82,7 +80,7 @@ const Foot = styled.footer`
       display: block;
       .logo-texts {
         max-width: initial;
-        margin-bottom: 20px;
+        margin-bottom: 40px;
       }
       .footer-navigation {
         display: inline-block;

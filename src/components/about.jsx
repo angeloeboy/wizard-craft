@@ -8,21 +8,24 @@ import ScrollToTop from "./ScrollTop";
 
 const Div = styled.div`
   background-image: url(${bg});
-  min-height: 100vh;
   background-size: cover;
   padding: 20px 5%;
   background-position: center;
   box-sizing: border-box;
+
   .container {
     max-width: 1550px;
     margin: 0 auto;
     display: flex;
     /* align-items: center; */
     justify-content: space-between;
-    padding-top: 200px;
+    min-height: 800px;
+    padding-top: 150px;
   }
   .text {
     width: 40%;
+    padding-top: 100px;
+
     h1 {
       font-size: 4rem;
       color: white;
@@ -47,8 +50,9 @@ const Div = styled.div`
   }
 
   .img-container {
-    width: 50%;
-
+    width: 55%;
+    padding-top: 70px;
+    transform: translateX(10%);
     img {
       width: 100%;
     }
@@ -73,6 +77,7 @@ const Div = styled.div`
 
   @media (max-width: 500px) {
     .text {
+      padding-top: 60px;
       h1 {
         font-size: 2.5rem;
       }
@@ -80,6 +85,14 @@ const Div = styled.div`
       p {
         font-size: 12px;
         margin-top: 10px;
+      }
+    }
+
+    .img-container {
+      width: 100%;
+      padding-top: 30px;
+      img {
+        width: 100%;
       }
     }
   }

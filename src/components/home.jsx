@@ -30,15 +30,16 @@ const Hero = styled.div`
   background-attachment: fixed;
   background-position: center;
   overflow-x: hidden;
+  padding: 0px 5%;
+
   .container {
-    max-width: 1500px;
     display: flex;
-    align-items: center;
     align-items: flex-end;
     justify-content: space-between;
     min-height: 900px;
     margin: 0 auto;
-    padding: 0px 5%;
+    max-width: 1500px;
+    /* min-width: 100%; */
   }
 
   .text-container {
@@ -93,7 +94,9 @@ const Hero = styled.div`
 
   .hero-image {
     width: 60%;
+    max-width: 800px;
     margin-bottom: 0px;
+    transform: translateY(7px);
     img {
       width: 100%;
       margin-left: 10%;
@@ -101,11 +104,11 @@ const Hero = styled.div`
   }
 
   @media (max-width: 900px) {
-    padding: 100px 0px;
+    padding: 100px 5%;
     display: relative;
     background-position-x: 25%;
     .container {
-      flex-direction: column-reverse;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       min-height: initial;
@@ -140,8 +143,10 @@ const Hero = styled.div`
   }
 
   @media (max-width: 600px) {
+    padding-bottom: 0px;
+    overflow-y: hidden;
     .container {
-      /* min-height: 100vh; */
+      padding-top: 70px;
     }
 
     .box1 {
@@ -160,6 +165,10 @@ const Hero = styled.div`
       p {
         font-size: 16px;
       }
+    }
+
+    .hero-image {
+      width: 120%;
     }
   }
 
@@ -302,7 +311,6 @@ const Button = styled.button`
 `;
 
 const Highlights = styled.div`
-  /* height: 100vh; */
   background-color: #f9f5f4;
   padding-bottom: 50px;
 
@@ -369,6 +377,10 @@ const Highlights = styled.div`
   }
 
   @media (max-width: 600px) {
+    .container {
+      padding: 0px 5%;
+    }
+
     .highlights-img {
       div:nth-child(1) {
         grid-column: 1/5;
