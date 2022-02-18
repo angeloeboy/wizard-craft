@@ -64,10 +64,11 @@ const Div = styled.div`
           align-content: center;
         }
         img {
-          width: 18px;
+          max-width: 18px;
           margin-top: 14px;
           margin-right: 10px;
           align-items: center;
+          max-height: 18px;
           &:nth-child(1) {
             margin-left: 0px;
           }

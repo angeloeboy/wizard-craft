@@ -15,10 +15,6 @@ import bigImg from "../assets/hero-images/first.png";
 import second from "../assets/hero-images/second.png";
 import third from "../assets/hero-images/third.png";
 import fourth from "../assets/hero-images/fourth.png";
-import ScrollToTop from "./ScrollTop";
-import box1 from "../assets/hero-images/homepage-des.png";
-import box2 from "../assets/hero-images/homepage-des1.png";
-import distillateProducts from "./distillateProducts";
 
 const Main = styled.div`
   background-color: #120033;
@@ -29,7 +25,7 @@ const Hero = styled.div`
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
-  overflow-x: hidden;
+  overflow: hidden;
   padding: 0px 5%;
 
   .container {

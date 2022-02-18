@@ -56,6 +56,12 @@ const Div = styled.div`
                   position: absolute;
                   top: 50%;
                   transform: translateY(-50%);
+                  filter: invert(100%);
+                }
+
+                svg {
+                  background-color: black;
+                  color: black;
                 }
               }
             }
@@ -152,9 +158,9 @@ const Div = styled.div`
         .feeling-container {
           .icon {
             width: 15px;
-
             img {
               width: 50%;
+              color: white;
             }
           }
         }

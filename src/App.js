@@ -72,35 +72,17 @@ function App() {
           <Nav />
           <Switch>
             <Route path="/" exact component={Home}/>
-            <Route path="/Distillate" exact render={(props) => <Distillate products={distillateProducts} noOfProduct={DnoOfProduct} setNoOfProduct={DsetNoOfProduct}/> }/>
+
 
             <Route path="/D8" exact render={(props) => <D8 products={d8Products} noOfProduct={DnoOfProduct} setNoOfProduct={DsetNoOfProduct}/> }/>
 
             <Route path="/Sauce-Concentrate" exact render={(props) => <SauceConcentrate products={d8Products} noOfProduct={DnoOfProduct} setNoOfProduct={DsetNoOfProduct}/> }/>
 
-            <Route path="/Full-Spectrum" exact render={(props) => <FullSpectrum products={fullSpectrumProducts} noOfProduct={FnoOfProduct} setNoOfProduct={FsetNoOfProduct}/> }/>
             
             <Route path="/About" exact component={About}/>
           
 
-            {/* Rendering all Distillate Products */}
 
-            {distillateProducts.map(product => (
-              <Route
-              path={`/Distillate/${product.name}`}
-              render={(props) => <ProductDetails products={product} />}
-            />
-            ))}
-
-            {/* Rendering all Full Spectrum Products */}
-
-            {fullSpectrumProducts.map(product => (
-              <Route
-              path={`/Full-Spectrum/${product.name}`}
-              render={(props) => <ProductDetails products={product} />}
-            />
-            ))}
-            
 
             {d8Products.map(product => (
               <Route

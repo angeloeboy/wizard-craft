@@ -124,7 +124,7 @@ const d8Products =  [
       details: "Berries and Cream, bred by Certified Portland, is an indica-dominant cross between Exotic Genetix’s Grease Monkey and Breeder Steve’s Shishkaberry. Expressing an aroma of tart fruit, blackberry thistle, and fresh waffle cone, the flavor takes on additional notes of caramelized sugar. The effects of Berries and Cream are strong, hitting behind the eyes before radiating throughout the body to provide relaxation and focusing mental clarity."
     },
     {
-      name: "Skittles",
+      name: "Skittlez",
       description: "Indica",
       ImgLink1: productIcons.relaxed,
       ImgLink2: productIcons.happy,
@@ -136,7 +136,7 @@ const d8Products =  [
       details: 'Zkittlez, also known as "Skittles," "Skittlz," and "Island Skittles" is an Indica marijuana strain bred from a mix of Grape Ape and Grapefruit that is crossed with another undisclosed strain. This candy-flavored strain was bred by 3rd Gen Family and Terp Hogz. Zkittlez won 1st Place at the 2016 Emerald Cup and has placed in several Cannabis Cups in San Francisco and Michigan. This strain features chunky colas that explode in a spectrum of light green hues and emit a sweet, tropical blend of fruit flavors. The effects of Zkittlez are calming, leaving consumers focused, alert, and happy while relaxing the body to help unwind any time of day.'
     },
     {
-      name: "Nerds",
+      name: "Nerdz",
       description: "Hybrid",
       ImgLink1: productIcons.euphoric,
       ImgLink2: productIcons.relaxed,
@@ -160,7 +160,7 @@ const d8Products =  [
       details: "Cali OG Kush is a weed strain. Reviewers on Leafly say this strain makes them feel relaxed, focused, and creative. Cali OG Kush has 7% CBD and 7% THC. The dominant terpene in this strain is myrcene. If you've smoked, dabbed, or otherwise enjoyed this strain, Cali OG Kush, before let us know! Leave a review."
     },
     {
-      name: "GG4",
+      name: "GG#4",
       description: "Hybrid",
       ImgLink1: productIcons.relaxed,
       ImgLink2: productIcons.happy,
@@ -305,7 +305,7 @@ const d8Products =  [
       ImgLink1: productIcons.creative,
       ImgLink2: productIcons.euphoric,
       ImgLink3: productIcons.focused,
-      ProductLogo: productLogo.wifiOg,
+      ProductLogo: productLogo.smarties,
       feeling1: "Creative", 
       feeling2:  "Euphoric",
       feeling3:  "Focused",

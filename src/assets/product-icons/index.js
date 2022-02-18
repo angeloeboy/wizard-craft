@@ -7,6 +7,10 @@ const productIcons = {
     sleepy: require("./sleepy.png").default,
     talkative: require("./talkative.png").default,
     tingly: require("./tingly.png").default,
+    energetic: require("./energetic.png").default,
+    aroused: require("./aroused.png").default,
+    focused: require("./focused.png").default,
+    hungry: require("./hungry.png").default,
     
 }
 
