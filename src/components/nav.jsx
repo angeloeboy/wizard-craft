@@ -26,7 +26,7 @@ const Navigation = styled.nav`
   }
 
   .nav-details {
-    background-color: #d5931c;
+    background-color: #ffa302;
     padding: 0px 5%;
 
     .nav-socmed-logo {

@@ -69,6 +69,8 @@ const Div = styled.div`
           margin-right: 10px;
           align-items: center;
           max-height: 18px;
+          filter: invert(100%);
+
           &:nth-child(1) {
             margin-left: 0px;
           }

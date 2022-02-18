@@ -56,7 +56,9 @@ const Div = styled.div`
                   position: absolute;
                   top: 50%;
                   transform: translateY(-50%);
-                  filter: invert(100%);
+                  /* filter: invert(100%); */
+                  filter: invert(7%) sepia(92%) saturate(4288%)
+                    hue-rotate(261deg) brightness(110%) contrast(104%);
                 }
 
                 svg {
